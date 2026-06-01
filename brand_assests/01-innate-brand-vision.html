@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innate Wellness — Brand Vision</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Cinzel:wght@400;500;600&family=Montserrat:wght@200;300;400;500;600&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  /* INNATE WELLNESS — Black + Forest + White */
+  --iw-black:       #0a0b0a;
+  --iw-charcoal:    #111312;
+  --iw-forest:      #162118;
+  --iw-forest-mid:  #1e2e20;
+  --iw-sage:        #3a5040;
+  --iw-white:       #f5f5f3;
+  --iw-off-white:   #ece9e3;
+  --iw-muted:       rgba(245,245,243,0.45);
+  --iw-line:        rgba(245,245,243,0.1);
+  --iw-green-line:  rgba(58,80,64,0.6);
+
+  /* TAILORED — Cream, Blush, Taupe, Rose — zero yellow */
+  --tb-ink:         #18171a;
+  --tb-taupe:       #6b5f57;
+  --tb-warm-grey:   #9a8e86;
+  --tb-sand:        #c2b5a8;
+  --tb-blush:       #ddd0c4;
+  --tb-rose:        #b89490;
+  --tb-petal:       #e8dbd4;
+  --tb-ivory:       #f2ede6;
+  --tb-cream:       #faf7f2;
+  --tb-line:        rgba(107,95,87,0.2);
+}
+
+body{font-family:'Montserrat',sans-serif;background:var(--iw-black);overflow-x:hidden;}
+
+/* ── UTILITIES ── */
+.w{max-width:1380px;margin:0 auto;}
+.sec-tag{
+  font-size:8px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;
+  display:flex;align-items:center;gap:20px;margin-bottom:56px;
+}
+.sec-tag::after{content:'';flex:1;height:1px;}
+.num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;font-weight:300;}
+
+/* ══ COVER ══ */
+.cover{
+  min-height:100vh;background:var(--iw-black);
+  display:grid;grid-template-rows:auto 1fr auto;
+  position:relative;overflow:hidden;
+}
+.cover::before{
+  content:'';position:absolute;
+  top:-30%;right:-15%;width:800px;height:800px;
+  background:radial-gradient(ellipse,rgba(30,46,32,.5) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cover-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:32px 72px;border-bottom:1px solid var(--iw-line);
+}
+.cover-bar-label{font-size:8.5px;font-weight:300;letter-spacing:.5em;text-transform:uppercase;color:rgba(245,245,243,.3);}
+.cover-bar-right{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(245,245,243,.25);}
+
+.cover-body{
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:80px 72px;text-align:center;
+}
+.cover-eyebrow{font-size:9px;font-weight:400;letter-spacing:.55em;text-transform:uppercase;color:var(--iw-sage);margin-bottom:56px;}
+
+.dual-marks{display:flex;align-items:center;gap:64px;margin-bottom:64px;}
+
+.mark-iw{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.mark-iw-emblem{
+  width:90px;height:90px;border:1px solid rgba(58,80,64,.8);
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.mark-iw-emblem::before{content:'';position:absolute;inset:7px;border:0.5px solid rgba(58,80,64,.3);}
+.mark-iw-letter{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;font-weight:300;color:var(--iw-white);position:relative;z-index:1;}
+.mark-iw-name{font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:.25em;color:var(--iw-white);text-align:center;line-height:1.7;}
+.mark-iw-name span{display:block;font-size:8px;font-weight:300;color:var(--iw-sage);letter-spacing:.35em;margin-top:3px;text-transform:uppercase;}
+
+.marks-divider{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.marks-div-line{width:1px;height:52px;background:linear-gradient(to bottom,transparent,rgba(245,245,243,.1),transparent);}
+.marks-div-text{font-size:7.5px;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,245,243,.2);}
+
+.mark-tb{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.mark-tb-emblem{
+  width:90px;height:90px;border:1px solid rgba(194,181,168,.5);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.mark-tb-emblem::after{content:'';position:absolute;inset:8px;border-radius:50%;border:.5px solid rgba(194,181,168,.2);}
+.mark-tb-letter{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:36px;font-weight:300;color:var(--tb-sand);position:relative;z-index:1;}
+.mark-tb-name{font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:.25em;color:var(--iw-white);text-align:center;line-height:1.7;}
+.mark-tb-name span{display:block;font-size:8px;font-weight:300;color:var(--tb-warm-grey);letter-spacing:.35em;margin-top:3px;text-transform:uppercase;}
+
+.cover-headline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(36px,5.5vw,72px);font-weight:300;line-height:1.25;
+  color:var(--iw-white);margin-bottom:24px;max-width:860px;
+}
+.cover-headline em{color:var(--iw-sage);font-style:normal;}
+.cover-sub{font-size:10px;font-weight:300;letter-spacing:.38em;text-transform:uppercase;color:rgba(245,245,243,.25);line-height:2.2;max-width:560px;}
+
+.cover-foot{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding:36px 72px;border-top:1px solid var(--iw-line);
+}
+.cover-stat{text-align:center;}
+.cs-n{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--iw-white);display:block;}
+.cs-l{font-size:8px;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:rgba(245,245,243,.25);margin-top:4px;display:block;}
+
+/* ══ IW IDENTITY ══ */
+.iw-id{background:var(--iw-charcoal);padding:100px 72px;position:relative;overflow:hidden;}
+.iw-id::before{
+  content:'INNATE';position:absolute;
+  font-family:'Cinzel',serif;font-size:220px;font-weight:600;
+  color:rgba(255,255,255,.015);top:50%;left:50%;
+  transform:translate(-50%,-50%);white-space:nowrap;letter-spacing:.15em;pointer-events:none;
+}
+.iw-id .sec-tag{color:rgba(58,80,64,.8);}
+.iw-id .sec-tag::after{background:linear-gradient(90deg,rgba(58,80,64,.4),transparent);}
+
+.iw-id-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;}
+
+.iw-h1{font-family:'Cinzel',serif;font-size:clamp(44px,6vw,84px);font-weight:400;letter-spacing:.07em;line-height:1.05;color:var(--iw-white);margin-bottom:10px;}
+.iw-h1-sub{font-family:'Cinzel',serif;font-size:clamp(11px,1.4vw,16px);font-weight:400;letter-spacing:.45em;color:var(--iw-sage);margin-bottom:40px;}
+.iw-body{font-family:'Raleway',sans-serif;font-size:13px;font-weight:300;line-height:2.1;color:var(--iw-muted);max-width:460px;margin-bottom:44px;}
+.iw-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.iw-tag{font-size:8px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(58,80,64,.9);border:1px solid rgba(58,80,64,.35);padding:9px 18px;}
+
+.iw-svc-list{display:flex;flex-direction:column;gap:2px;}
+.iw-svc{display:flex;align-items:center;gap:20px;padding:20px 24px;background:rgba(255,255,255,.02);border-left:2px solid transparent;transition:all .25s;cursor:default;}
+.iw-svc:hover{background:rgba(30,46,32,.4);border-left-color:var(--iw-sage);}
+.iw-svc-icon{font-size:15px;width:24px;text-align:center;flex-shrink:0;opacity:.6;}
+.iw-svc-name{font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--iw-white);flex:1;}
+.iw-svc-note{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(245,245,243,.3);}
+
+/* ══ IW VISUAL SYSTEM ══ */
+.iw-vis{background:var(--iw-black);padding:100px 72px;}
+.iw-vis .sec-tag{color:rgba(58,80,64,.7);}
+.iw-vis .sec-tag::after{background:linear-gradient(90deg,rgba(58,80,64,.3),transparent);}
+.iw-vis-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+
+.iw-pal{display:flex;flex-direction:column;gap:0;}
+.iw-pal-label{font-size:8px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:rgba(58,80,64,.6);margin-bottom:24px;}
+.iw-col-row{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid rgba(245,245,243,.05);}
+.iw-col-swatch{width:64px;height:64px;flex-shrink:0;}
+.iw-col-name{font-size:9px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,245,243,.6);display:block;}
+.iw-col-hex{font-family:'Cormorant Garamond',serif;font-size:13px;color:rgba(245,245,243,.25);display:block;margin:3px 0;}
+.iw-col-use{font-size:10px;font-weight:300;color:rgba(58,80,64,.7);}
+.iw-grad{height:6px;border-radius:2px;margin-top:24px;background:linear-gradient(90deg,#0a0b0a,#111312,#162118,#1e2e20,#3a5040,#6a8a70,#ece9e3,#f5f5f3);}
+.iw-grad-label{font-size:8px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,245,243,.15);margin-top:10px;}
+
+.iw-type{display:flex;flex-direction:column;gap:0;}
+.iw-type-label{font-size:8px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:rgba(58,80,64,.6);margin-bottom:24px;}
+.iw-t-item{border-top:1px solid rgba(245,245,243,.06);padding:32px 0;}
+.iw-t-role{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--iw-sage);margin-bottom:14px;}
+.iw-t-cinzel{font-family:'Cinzel',serif;font-size:52px;font-weight:400;letter-spacing:.08em;color:var(--iw-white);line-height:1;}
+.iw-t-corm{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:50px;font-weight:300;color:var(--iw-white);line-height:1;}
+.iw-t-mont{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:200;letter-spacing:.42em;text-transform:uppercase;color:rgba(245,245,243,.5);line-height:2;}
+.iw-t-meta{font-size:8.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(58,80,64,.55);margin-top:10px;}
+
+/* ══ IW MENS ══ */
+.iw-mens{background:var(--iw-forest);padding:100px 72px;position:relative;overflow:hidden;}
+.iw-mens::before{content:'';position:absolute;top:0;right:0;bottom:0;width:45%;background:linear-gradient(90deg,transparent,rgba(0,0,0,.35));}
+.iw-mens .sec-tag{color:rgba(106,138,112,.6);}
+.iw-mens .sec-tag::after{background:linear-gradient(90deg,rgba(58,80,64,.4),transparent);}
+.iw-mens-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:2;}
+.iw-mens-h{font-family:'Cinzel',serif;font-size:clamp(32px,4.5vw,64px);font-weight:400;letter-spacing:.1em;line-height:1.12;color:var(--iw-white);margin-bottom:20px;}
+.iw-mens-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;font-weight:300;color:rgba(106,138,112,.9);margin-bottom:32px;line-height:1.5;}
+.iw-mens-body{font-family:'Raleway',sans-serif;font-size:12px;font-weight:300;line-height:2.1;color:rgba(245,245,243,.4);max-width:440px;}
+.mens-rows{display:flex;flex-direction:column;gap:2px;}
+.mens-row{display:flex;align-items:center;gap:24px;padding:26px 28px;background:rgba(0,0,0,.2);border-left:3px solid var(--iw-sage);}
+.mens-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:rgba(106,138,112,.9);flex-shrink:0;width:80px;line-height:1;}
+.mens-title{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--iw-white);display:block;margin-bottom:5px;}
+.mens-desc{font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;color:rgba(245,245,243,.38);line-height:1.6;}
+
+/* ══ IW MEMBERSHIP ══ */
+.iw-mem{background:var(--iw-charcoal);padding:100px 72px;}
+.iw-mem .sec-tag{color:rgba(58,80,64,.7);}
+.iw-mem .sec-tag::after{background:linear-gradient(90deg,rgba(58,80,64,.35),transparent);}
+.iw-mem-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;}
+.mem-card{padding:48px 40px;display:flex;flex-direction:column;gap:22px;}
+.mc-1{background:rgba(30,46,32,.35);border-top:2px solid var(--iw-sage);}
+.mc-2{background:rgba(255,255,255,.025);border-top:1px solid rgba(58,80,64,.3);}
+.mc-3{background:rgba(255,255,255,.015);border-top:1px solid rgba(58,80,64,.15);}
+.mem-tier{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--iw-sage);}
+.mem-name{font-family:'Cinzel',serif;font-size:24px;font-weight:400;letter-spacing:.1em;color:var(--iw-white);line-height:1.3;}
+.mem-price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:rgba(106,138,112,.9);line-height:1;}
+.mem-price sup{font-size:22px;vertical-align:super;}
+.mem-price sub{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;letter-spacing:.2em;color:rgba(106,138,112,.5);}
+.mem-feats{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.mem-feats li{font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;color:rgba(245,245,243,.5);padding-left:16px;position:relative;line-height:1.5;}
+.mem-feats li::before{content:'—';position:absolute;left:0;color:var(--iw-sage);font-size:10px;}
+.mem-badge{display:inline-block;font-size:7.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding:8px 16px;border:1px solid rgba(58,80,64,.5);color:rgba(106,138,112,.8);width:fit-content;}
+
+/* ══ IW VOICE ══ */
+.iw-voice{background:var(--iw-black);padding:100px 72px;}
+.iw-voice .sec-tag{color:rgba(58,80,64,.7);}
+.iw-voice .sec-tag::after{background:linear-gradient(90deg,rgba(58,80,64,.3),transparent);}
+.iw-manifesto{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,3.8vw,52px);font-weight:300;line-height:1.45;color:var(--iw-white);max-width:880px;margin:0 auto 80px;text-align:center;}
+.iw-manifesto em{color:var(--iw-sage);font-style:normal;}
+.iw-msg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.iw-msg{padding:40px 36px;background:rgba(255,255,255,.025);border-top:1px solid rgba(58,80,64,.25);display:flex;flex-direction:column;gap:15px;}
+.iw-msg-tag{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--iw-sage);}
+.iw-msg-h{font-family:'Cinzel',serif;font-size:21px;font-weight:400;letter-spacing:.08em;line-height:1.4;color:var(--iw-white);}
+.iw-msg-b{font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;line-height:1.95;color:rgba(245,245,243,.4);}
+
+/* ══ BRIDGE ══ */
+.bridge{background:var(--iw-forest-mid);padding:80px 72px;display:flex;align-items:center;justify-content:center;min-height:300px;position:relative;overflow:hidden;}
+.bridge::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;background:linear-gradient(to bottom,transparent,rgba(245,245,243,.08),transparent);}
+.bridge-inner{display:flex;align-items:center;gap:80px;position:relative;z-index:2;}
+.bridge-brand{display:flex;flex-direction:column;align-items:center;gap:14px;flex:1;text-align:center;}
+.bridge-sq{width:60px;height:60px;border:1px solid rgba(58,80,64,.7);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:300;color:rgba(106,138,112,.9);}
+.bridge-rnd{width:60px;height:60px;border:1px solid rgba(194,181,168,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:300;color:var(--tb-sand);}
+.bridge-name{font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:.22em;color:var(--iw-white);}
+.bridge-role{font-size:8px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,245,243,.28);line-height:2;}
+.bridge-mid{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.bridge-pill{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:rgba(106,138,112,.8);padding:10px 24px;border:1px solid rgba(58,80,64,.35);}
+.bridge-desc{font-family:'Raleway',sans-serif;font-size:10px;font-weight:300;color:rgba(245,245,243,.28);letter-spacing:.08em;max-width:200px;line-height:1.9;}
+
+/* ══ TB IDENTITY ══ */
+.tb-id{background:var(--tb-ink);padding:100px 72px;position:relative;overflow:hidden;}
+.tb-id::before{content:'';position:absolute;top:-80px;right:-80px;width:550px;height:550px;background:radial-gradient(ellipse,rgba(194,181,168,.05) 0%,transparent 60%);}
+.tb-id .sec-tag{color:rgba(154,142,134,.6);}
+.tb-id .sec-tag::after{background:linear-gradient(90deg,rgba(194,181,168,.25),transparent);}
+.tb-id-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.tb-h1{font-family:'Cinzel',serif;font-size:clamp(38px,5.5vw,76px);font-weight:400;letter-spacing:.08em;line-height:1.08;color:var(--tb-ivory);margin-bottom:10px;}
+.tb-h1-sub{font-family:'Cinzel',serif;font-size:clamp(11px,1.3vw,15px);font-weight:400;letter-spacing:.42em;color:var(--tb-warm-grey);margin-bottom:36px;}
+.tb-body{font-family:'Raleway',sans-serif;font-size:13px;font-weight:300;line-height:2.1;color:rgba(242,237,230,.45);max-width:440px;margin-bottom:36px;}
+.tb-cred{display:flex;align-items:center;gap:16px;padding:20px 24px;background:rgba(194,181,168,.06);border-left:2px solid rgba(194,181,168,.3);max-width:420px;}
+.tb-cred-text{font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;color:rgba(242,237,230,.5);line-height:1.7;}
+.tb-cred-text strong{font-size:8.5px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--tb-warm-grey);display:block;margin-bottom:4px;}
+.tb-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.tb-svc{padding:32px 26px;display:flex;flex-direction:column;gap:12px;}
+.tb-svc-a{background:rgba(242,237,230,.03);}
+.tb-svc-b{background:rgba(184,148,144,.05);border-top:1px solid rgba(184,148,144,.18);}
+.tb-svc-c{background:rgba(194,181,168,.04);}
+.tb-svc-d{background:rgba(232,219,212,.05);border-top:1px solid rgba(232,219,212,.12);}
+.tb-svc-icon{font-size:22px;opacity:.75;}
+.tb-svc-name{font-size:8.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--tb-warm-grey);}
+.tb-svc-desc{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;font-style:italic;color:rgba(242,237,230,.4);line-height:1.55;}
+
+/* ══ TB VISUAL ══ */
+.tb-vis{background:var(--tb-cream);padding:100px 72px;}
+.tb-vis .sec-tag{color:var(--tb-warm-grey);}
+.tb-vis .sec-tag::after{background:linear-gradient(90deg,var(--tb-sand),transparent);}
+.tb-vis-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.tb-pal-label{font-size:8px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--tb-warm-grey);margin-bottom:24px;}
+.tb-swatches{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.tb-sw{display:flex;flex-direction:column;gap:9px;flex:1;min-width:70px;}
+.tb-sw-c{height:72px;position:relative;}
+.tb-sw-c::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1) 0%,transparent 50%);}
+.tb-sw-n{font-size:8px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--tb-taupe);}
+.tb-sw-h{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--tb-warm-grey);}
+.tb-grad{height:6px;border-radius:2px;background:linear-gradient(90deg,#18171a,#6b5f57,#9a8e86,#c2b5a8,#b89490,#ddd0c4,#e8dbd4,#f2ede6,#faf7f2);margin-bottom:10px;}
+.tb-grad-label{font-size:8px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--tb-warm-grey);}
+
+.tb-type-label{font-size:8px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--tb-warm-grey);margin-bottom:24px;}
+.tb-t-item{border-top:1px solid var(--tb-blush);padding:30px 0;}
+.tb-t-role{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--tb-rose);margin-bottom:14px;}
+.tb-t-cinzel{font-family:'Cinzel',serif;font-size:46px;font-weight:400;letter-spacing:.08em;color:var(--tb-ink);line-height:1;}
+.tb-t-corm{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:48px;font-weight:300;color:var(--tb-ink);line-height:1;}
+.tb-t-mont{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:200;letter-spacing:.4em;text-transform:uppercase;color:var(--tb-taupe);line-height:2;}
+.tb-t-meta{font-size:8.5px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--tb-rose);margin-top:10px;opacity:.7;}
+
+/* ══ TB LOGOS ══ */
+.tb-logos{background:var(--tb-ivory);padding:100px 72px;}
+.tb-logos .sec-tag{color:var(--tb-warm-grey);}
+.tb-logos .sec-tag::after{background:linear-gradient(90deg,var(--tb-sand),transparent);}
+.tb-logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.tb-lv{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 20px;gap:18px;text-align:center;}
+.tlv-cream{background:var(--tb-cream);}
+.tlv-blush{background:var(--tb-petal);}
+.tlv-dark{background:var(--tb-ink);}
+.tlv-rose{background:linear-gradient(135deg,#c2a09c,#d4b4b0);}
+.tb-le{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;}
+.tb-le::before{content:'';position:absolute;inset:0;border-radius:50%;border:1.5px solid currentColor;}
+.tb-le::after{content:'';position:absolute;inset:7px;border-radius:50%;border:.5px solid currentColor;opacity:.3;}
+.tb-le-letter{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:27px;font-weight:300;position:relative;z-index:1;}
+.tb-wm-main{font-family:'Cinzel',serif;font-size:15px;font-weight:500;letter-spacing:.2em;line-height:1.3;}
+.tb-wm-by{font-family:'Cinzel',serif;font-size:9px;font-weight:400;letter-spacing:.38em;opacity:.6;margin:3px 0;}
+.tb-wm-tag{font-family:'Montserrat',sans-serif;font-size:7px;font-weight:300;letter-spacing:.28em;text-transform:uppercase;opacity:.4;}
+.tb-lv-label{font-size:7.5px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;opacity:.35;}
+
+/* ══ TB MESSAGING ══ */
+.tb-msg{background:var(--tb-ink);padding:100px 72px;}
+.tb-msg .sec-tag{color:rgba(154,142,134,.6);}
+.tb-msg .sec-tag::after{background:linear-gradient(90deg,rgba(194,181,168,.25),transparent);}
+.tb-tagline{text-align:center;padding:48px 0 72px;position:relative;}
+.tb-tagline::before{content:'io';position:absolute;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:280px;font-weight:300;color:rgba(194,181,168,.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.tb-tl-eye{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:rgba(194,181,168,.4);margin-bottom:24px;}
+.tb-tl-main{font-family:'Cinzel',serif;font-size:clamp(36px,6vw,82px);font-weight:400;letter-spacing:.1em;color:var(--tb-ivory);line-height:1.1;margin-bottom:18px;}
+.tb-tl-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;font-weight:300;color:var(--tb-warm-grey);}
+.tb-msg-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.tb-mc{padding:36px 26px;background:rgba(255,255,255,.025);border-top:2px solid transparent;display:flex;flex-direction:column;gap:13px;}
+.tb-mc:nth-child(1){border-top-color:var(--tb-warm-grey);}
+.tb-mc:nth-child(2){border-top-color:var(--tb-rose);}
+.tb-mc:nth-child(3){border-top-color:var(--tb-sand);}
+.tb-mc:nth-child(4){border-top-color:var(--tb-blush);}
+.tb-mc-tag{font-size:8px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--tb-warm-grey);}
+.tb-mc-h{font-family:'Cinzel',serif;font-size:19px;font-weight:400;letter-spacing:.07em;line-height:1.4;color:var(--tb-ivory);}
+.tb-mc-b{font-family:'Raleway',sans-serif;font-size:11px;font-weight:300;line-height:1.95;color:rgba(242,237,230,.4);}
+
+/* ══ TB JOURNEY ══ */
+.tb-journey{background:var(--tb-petal);padding:100px 72px;}
+.tb-journey .sec-tag{color:var(--tb-taupe);}
+.tb-journey .sec-tag::after{background:linear-gradient(90deg,var(--tb-sand),transparent);}
+.tb-steps{display:grid;grid-template-columns:repeat(5,1fr);position:relative;}
+.tb-steps::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--tb-sand),var(--tb-sand),transparent);}
+.tb-step{display:flex;flex-direction:column;align-items:center;gap:18px;padding:0 14px;text-align:center;}
+.tb-sn{width:64px;height:64px;border:1.5px solid var(--tb-taupe);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;font-weight:300;color:var(--tb-taupe);background:var(--tb-petal);position:relative;z-index:2;}
+.tb-st{font-size:8.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--tb-taupe);}
+.tb-sd{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--tb-taupe);line-height:1.6;}
+
+/* ══ TB REFERRAL ══ */
+.tb-ref{background:var(--tb-ink);padding:100px 72px;}
+.tb-ref .sec-tag{color:rgba(154,142,134,.6);}
+.tb-ref .sec-tag::after{background:linear-gradient(90deg,rgba(194,181,168,.25),transparent);}
+.tb-ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.trc{padding:72px 60px;display:flex;flex-direction:column;gap:22px;}
+.trc-dark{background:rgba(255,255,255,.025);border:1px solid rgba(194,181,168,.1);}
+.trc-warm{background:rgba(184,148,144,.07);}
+.trc-eye{font-size:8px;font-weight:700;letter-spacing:.45em;text-transform:uppercase;color:var(--tb-warm-grey);}
+.trc-h{font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,46px);font-weight:400;letter-spacing:.08em;line-height:1.2;color:var(--tb-ivory);}
+.trc-amt{font-family:'Cormorant Garamond',serif;font-size:84px;font-weight:300;color:var(--tb-sand);line-height:1;}
+.trc-amt sup{font-size:32px;vertical-align:super;}
+.trc-txt{font-family:'Raleway',sans-serif;font-size:12px;font-weight:300;line-height:2;color:rgba(242,237,230,.45);max-width:380px;}
+.trc-btn{display:inline-block;padding:15px 36px;font-size:8.5px;font-weight:600;letter-spacing:.38em;text-transform:uppercase;border:1px solid rgba(194,181,168,.35);color:var(--tb-warm-grey);width:fit-content;}
+
+/* ══ CLOSER ══ */
+.closer{background:var(--iw-black);padding:120px 72px;text-align:center;position:relative;overflow:hidden;}
+.closer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(58,80,64,.5),transparent);}
+.closer-eye{font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(58,80,64,.5);margin-bottom:48px;}
+.closer-h{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(38px,6vw,88px);font-weight:300;color:var(--iw-white);line-height:1.2;margin-bottom:32px;max-width:880px;margin-left:auto;margin-right:auto;}
+.closer-h em{color:var(--iw-sage);font-style:normal;}
+.closer-sub{font-size:10px;font-weight:300;letter-spacing:.38em;text-transform:uppercase;color:rgba(245,245,243,.25);margin-bottom:80px;line-height:2.4;}
+.closer-marks{display:flex;align-items:center;justify-content:center;gap:80px;margin-bottom:72px;}
+.closer-item{display:flex;flex-direction:column;align-items:center;gap:14px;}
+.closer-sq{width:76px;height:76px;border:1px solid rgba(58,80,64,.5);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;font-weight:300;color:rgba(106,138,112,.8);}
+.closer-rnd{width:76px;height:76px;border:1px solid rgba(194,181,168,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;font-weight:300;color:var(--tb-sand);}
+.closer-name{font-family:'Cinzel',serif;font-size:12px;font-weight:500;letter-spacing:.22em;color:var(--iw-white);line-height:1.6;text-align:center;}
+.closer-role{font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,245,243,.25);}
+.closer-plus{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:52px;font-weight:300;color:rgba(58,80,64,.3);}
+.closer-line{height:1px;background:linear-gradient(90deg,transparent,rgba(58,80,64,.3),transparent);max-width:500px;margin:0 auto 40px;}
+.closer-foot{font-size:9px;font-weight:300;letter-spacing:.48em;text-transform:uppercase;color:rgba(245,245,243,.18);}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-bar">
+    <span class="cover-bar-label">Confidential · Brand Vision Proposal · 2026</span>
+    <span class="cover-bar-right">Prepared for the Innate Wellness Partnership</span>
+  </div>
+  <div class="cover-body">
+    <p class="cover-eyebrow">A Dual-Brand Vision for Elite Wellness · DFW</p>
+    <div class="dual-marks">
+      <div class="mark-iw">
+        <div class="mark-iw-emblem"><span class="mark-iw-letter">io</span></div>
+        <div class="mark-iw-name">INNATE WELLNESS<span>Functional Medicine & Optimization</span></div>
+      </div>
+      <div class="marks-divider">
+        <div class="marks-div-line"></div>
+        <span class="marks-div-text">Family</span>
+        <div class="marks-div-line"></div>
+      </div>
+      <div class="mark-tb">
+        <div class="mark-tb-emblem"><span class="mark-tb-letter">io</span></div>
+        <div class="mark-tb-name">TAILORED BY INNATE<span>Concierge IV & Aesthetics</span></div>
+      </div>
+    </div>
+    <h1 class="cover-headline">Two brands. One <em>philosophy.</em><br>Built for those who demand more.</h1>
+    <p class="cover-sub">A strategic brand expansion positioning Innate Wellness<br>as the premier health optimization ecosystem in DFW</p>
+  </div>
+  <div class="cover-foot">
+    <div class="cover-stat"><span class="cs-n">2</span><span class="cs-l">Distinct Brands</span></div>
+    <div class="cover-stat"><span class="cs-n">$199</span><span class="cs-l">Elite Membership / mo</span></div>
+    <div class="cover-stat"><span class="cs-n">100+</span><span class="cs-l">Bio Markers Analyzed</span></div>
+    <div class="cover-stat"><span class="cs-n">24/7</span><span class="cs-l">Concierge Access</span></div>
+    <div class="cover-stat"><span class="cs-n">∞</span><span class="cs-l">Expansion Potential</span></div>
+  </div>
+</section>
+
+<!-- IW IDENTITY -->
+<section class="iw-id">
+  <div class="w">
+    <div class="sec-tag"><span class="num">01</span> Brand One — Innate Wellness</div>
+    <div class="iw-id-grid">
+      <div>
+        <h2 class="iw-h1">INNATE<br>WELLNESS</h2>
+        <p class="iw-h1-sub">Optimization · Performance · Longevity</p>
+        <p class="iw-body">A private functional medicine practice for those who refuse to settle for standard care. Founded by a UT Southwestern-trained clinician with a mission to engineer vitality — not merely manage symptoms. Built for the high-performing man and woman who want their biology fully optimized.</p>
+        <div class="iw-tags">
+          <span class="iw-tag">Functional Medicine</span>
+          <span class="iw-tag">Hormone Therapy</span>
+          <span class="iw-tag">Peptides</span>
+          <span class="iw-tag">Longevity</span>
+          <span class="iw-tag">Concierge PCP</span>
+        </div>
+      </div>
+      <div class="iw-svc-list">
+        <div class="iw-svc"><span class="iw-svc-icon">⚡</span><span class="iw-svc-name">Bio-Identical HRT & TRT</span><span class="iw-svc-note">Men's & women's hormones</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">🧬</span><span class="iw-svc-name">Peptide Therapy</span><span class="iw-svc-note">BPC-157, CJC, Thymosin</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">◈</span><span class="iw-svc-name">100-Marker Bio Panel</span><span class="iw-svc-note">Comprehensive lab analysis</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">◎</span><span class="iw-svc-name">Health Optimization</span><span class="iw-svc-note">Sleep, nutrition, performance</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">◇</span><span class="iw-svc-name">Medical Weight Loss</span><span class="iw-svc-note">Muscle-preserving protocols</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">◉</span><span class="iw-svc-name">Athletic Performance</span><span class="iw-svc-note">Biohacking & recovery</span></div>
+        <div class="iw-svc"><span class="iw-svc-icon">▣</span><span class="iw-svc-name">Corporate Wellness</span><span class="iw-svc-note">Team optimization programs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IW VISUAL SYSTEM -->
+<section class="iw-vis">
+  <div class="w">
+    <div class="sec-tag"><span class="num">02</span> Innate Wellness — Visual Identity</div>
+    <div class="iw-vis-grid">
+      <div class="iw-pal">
+        <p class="iw-pal-label">Color Palette — Black, Forest & White</p>
+        <div class="iw-col-row"><div class="iw-col-swatch" style="background:#0a0b0a;border:1px solid rgba(255,255,255,.06);"></div><div><span class="iw-col-name">Obsidian</span><span class="iw-col-hex">#0A0B0A</span><span class="iw-col-use">Primary background · absolute authority</span></div></div>
+        <div class="iw-col-row"><div class="iw-col-swatch" style="background:#162118;"></div><div><span class="iw-col-name">Deep Forest</span><span class="iw-col-hex">#162118</span><span class="iw-col-use">Secondary sections · vitality & depth</span></div></div>
+        <div class="iw-col-row"><div class="iw-col-swatch" style="background:#3a5040;"></div><div><span class="iw-col-name">Sage</span><span class="iw-col-hex">#3A5040</span><span class="iw-col-use">Accent · subtle sophistication</span></div></div>
+        <div class="iw-col-row"><div class="iw-col-swatch" style="background:#6a8a70;"></div><div><span class="iw-col-name">Sage Light</span><span class="iw-col-hex">#6A8A70</span><span class="iw-col-use">Highlights · active elements</span></div></div>
+        <div class="iw-col-row"><div class="iw-col-swatch" style="background:#f5f5f3;"></div><div><span class="iw-col-name">Clean White</span><span class="iw-col-hex">#F5F5F3</span><span class="iw-col-use">Body text on dark · precision</span></div></div>
+        <div class="iw-grad"></div>
+        <p class="iw-grad-label">Full Tonal Progression — Obsidian to White</p>
+      </div>
+      <div class="iw-type">
+        <p class="iw-type-label">Typography System</p>
+        <div class="iw-t-item"><div class="iw-t-role">Display · Brand Name</div><div class="iw-t-cinzel">Cinzel</div><div class="iw-t-meta">Cinzel · 400/500 · Headings, brand name</div></div>
+        <div class="iw-t-item"><div class="iw-t-role">Editorial · Pull Quotes</div><div class="iw-t-corm">Cormorant</div><div class="iw-t-meta">Cormorant Garamond Italic · 300 · Manifestos</div></div>
+        <div class="iw-t-item"><div class="iw-t-role">Body · UI · Labels</div><div class="iw-t-mont">Montserrat Light<br>Optimization · Performance</div><div class="iw-t-meta">Montserrat 200/300 · All UI text</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IW MEN'S HEALTH -->
+<section class="iw-mens">
+  <div class="w">
+    <div class="sec-tag"><span class="num">03</span> Men's Health — The Untapped Opportunity</div>
+    <div class="iw-mens-grid">
+      <div>
+        <h2 class="iw-mens-h">PEAK<br>PERFORMANCE<br>STARTS<br>HERE.</h2>
+        <p class="iw-mens-sub">Clinician-directed TRT, peptide protocols & hormone optimization — built around your bloodwork, not a template.</p>
+        <p class="iw-mens-body">The DFW market is severely underserved in premium men's health. Most TRT clinics feel transactional and low-end. Innate Wellness is positioned to own this space — pairing testosterone optimization with peptide therapy, metabolic health, and biohacking in a way no local competitor offers at this clinical level. This deserves its own marketing push.</p>
+      </div>
+      <div class="mens-rows">
+        <div class="mens-row"><div class="mens-val">TRT</div><div class="mens-text"><span class="mens-title">Testosterone Replacement</span><span class="mens-desc">Traditional & new oral TRT options — lab-guided, continuously monitored, personally managed</span></div></div>
+        <div class="mens-row"><div class="mens-val">GH+</div><div class="mens-text"><span class="mens-title">Growth Hormone Peptides</span><span class="mens-desc">CJC-1295/Ipamorelin, AOD-9604 for body composition, recovery & performance</span></div></div>
+        <div class="mens-row"><div class="mens-val">BIO</div><div class="mens-text"><span class="mens-title">Biological Age Analysis</span><span class="mens-desc">PNOe Precision resting metabolic rate — know your real biological age, not your birth year</span></div></div>
+        <div class="mens-row"><div class="mens-val">24/7</div><div class="mens-text"><span class="mens-title">On-Call Provider Access</span><span class="mens-desc">A real clinician available to text, adjust, and guide — not a portal, not a wait list</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IW MEMBERSHIP -->
+<section class="iw-mem">
+  <div class="w">
+    <div class="sec-tag"><span class="num">04</span> Membership Structure</div>
+    <div class="iw-mem-grid">
+      <div class="mem-card mc-1">
+        <div class="mem-tier">★ Flagship Tier</div>
+        <div class="mem-name">Elite Concierge</div>
+        <div class="mem-price"><sup>$</sup>199<sub>/mo</sub></div>
+        <ul class="mem-feats">
+          <li>24/7 On-Call Provider Access</li>
+          <li>Acting Primary Care Provider (PCP)</li>
+          <li>Prescriptions Called In & Managed</li>
+          <li>Unlimited Visits — Telehealth & In-Person</li>
+          <li>Comprehensive 100-Marker Bio Panel</li>
+          <li>Tailored Health Optimization Plan</li>
+          <li>Hormone Optimization</li>
+          <li>Medical Weight Loss Support</li>
+          <li>20% Off All Peptides</li>
+          <li>15% Off All IV Services</li>
+          <li>Biological Age Analysis (PNOe)</li>
+        </ul>
+        <div class="mem-badge">Most Comprehensive</div>
+      </div>
+      <div class="mem-card mc-2">
+        <div class="mem-tier">Focused Tier</div>
+        <div class="mem-name">Peptide Plus</div>
+        <div class="mem-price" style="font-size:36px;color:rgba(106,138,112,.6);">Custom<sub style="font-size:12px;"> pricing</sub></div>
+        <ul class="mem-feats">
+          <li>On-Call Provider for Peptide Services</li>
+          <li>Text-Based Refills</li>
+          <li>Monthly Peptide Follow-Ups</li>
+          <li>20% Off All Peptides</li>
+          <li>IV Services at Full Cost</li>
+          <li>Focused Optimization — No PCP Services</li>
+        </ul>
+        <div class="mem-badge" style="border-color:rgba(58,80,64,.25);color:rgba(106,138,112,.55);">Focused Access</div>
+      </div>
+      <div class="mem-card mc-3">
+        <div class="mem-tier">Proposed · New</div>
+        <div class="mem-name">Corporate Wellness</div>
+        <div class="mem-price" style="font-size:34px;color:rgba(106,138,112,.45);">Group<sub style="font-size:12px;"> rates</sub></div>
+        <ul class="mem-feats">
+          <li>Executive Team Health Assessments</li>
+          <li>In-Office IV Wellness Days</li>
+          <li>Corporate Biometric Screenings</li>
+          <li>Personalized Nutrition Plans</li>
+          <li>Stress & Recovery Programs</li>
+          <li>Tailored by Innate Pop-Up Access</li>
+        </ul>
+        <div class="mem-badge" style="border-color:rgba(58,80,64,.18);color:rgba(106,138,112,.4);">Growth Opportunity</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IW VOICE -->
+<section class="iw-voice">
+  <div class="w">
+    <div class="sec-tag"><span class="num">05</span> Brand Voice — Innate Wellness</div>
+    <p class="iw-manifesto">"True health is not about waiting for illness — it's about <em>engineering vitality</em> from the inside out."</p>
+    <div class="iw-msg-grid">
+      <div class="iw-msg"><div class="iw-msg-tag">Men's Health</div><div class="iw-msg-h">Optimize.<br>Perform.<br>Lead.</div><div class="iw-msg-b">Your hormones, your peptides, your performance protocol — clinician-directed and built around your bloodwork. Not a template. Not a guess. Your biology, fully optimized.</div></div>
+      <div class="iw-msg"><div class="iw-msg-tag">Longevity</div><div class="iw-msg-h">Your Path to<br>Limitless<br>Vitality.</div><div class="iw-msg-b">Personalized concierge medicine and performance optimization designed to elevate your health, longevity, hormones, and body composition for the long game.</div></div>
+      <div class="iw-msg"><div class="iw-msg-tag">Military & First Responders</div><div class="iw-msg-h">You Serve.<br>We Honor<br>That.</div><div class="iw-msg-b">Special rates for military and first responders. Your body has given everything. Let us help you recover, optimize, and continue performing at your highest level.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <div class="bridge-brand">
+      <div class="bridge-sq">io</div>
+      <div class="bridge-name">INNATE WELLNESS</div>
+      <div class="bridge-role">Functional Medicine<br>Concierge PCP<br>Hormone & Peptide Therapy</div>
+    </div>
+    <div class="bridge-mid">
+      <div class="bridge-pill">The Innate Family</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:rgba(245,245,243,.15);">⟵ &nbsp; ⟶</div>
+      <div class="bridge-desc">Shared clinical credibility. Distinct identities. One ecosystem.</div>
+    </div>
+    <div class="bridge-brand">
+      <div class="bridge-rnd">io</div>
+      <div class="bridge-name">TAILORED BY INNATE</div>
+      <div class="bridge-role">Concierge IV Therapy<br>Aesthetics & Beauty<br>Mobile Wellness</div>
+    </div>
+  </div>
+</section>
+
+<!-- TB IDENTITY -->
+<section class="tb-id">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-warm-grey);">06</span> Brand Two — Tailored by Innate</div>
+    <div class="tb-id-grid">
+      <div>
+        <h2 class="tb-h1">TAILORED<br>BY INNATE</h2>
+        <p class="tb-h1-sub">Concierge IV & Aesthetics</p>
+        <p class="tb-body">The lifestyle entry point to the Innate ecosystem. Premium mobile IV therapy, clinician-formulated drips, and aesthetic treatments delivered to your home, hotel, or event. Not an add-on. A dedicated brand built to own the luxury mobile wellness space in DFW.</p>
+        <div class="tb-cred">
+          <div style="font-size:20px;opacity:.6;">◎</div>
+          <div class="tb-cred-text"><strong>Clinician-Directed</strong>Every protocol is backed by the same clinical expertise powering Innate Wellness — UT Southwestern-trained, evidence-based, personalized to you.</div>
+        </div>
+      </div>
+      <div class="tb-svc-grid">
+        <div class="tb-svc tb-svc-a"><div class="tb-svc-icon">💧</div><div class="tb-svc-name">IV Therapy</div><div class="tb-svc-desc">Hydration, immunity, energy & detox — custom-blended drips</div></div>
+        <div class="tb-svc tb-svc-b"><div class="tb-svc-icon">✨</div><div class="tb-svc-name">Aesthetics</div><div class="tb-svc-desc">Glutathione, NAD+, biotin & beauty infusions</div></div>
+        <div class="tb-svc tb-svc-c"><div class="tb-svc-icon">⚡</div><div class="tb-svc-name">Recovery</div><div class="tb-svc-desc">Athletic & post-event recovery at elite standards</div></div>
+        <div class="tb-svc tb-svc-d"><div class="tb-svc-icon">◇</div><div class="tb-svc-name">Mobile Concierge</div><div class="tb-svc-desc">Home, hotel, event — we come to you</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TB VISUAL -->
+<section class="tb-vis">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-rose);font-family:'Cormorant Garamond',serif;font-style:italic;">07</span> Tailored — Visual Identity</div>
+    <div class="tb-vis-grid">
+      <div>
+        <p class="tb-pal-label">Color Palette — Warm Neutrals, Zero Yellow</p>
+        <div class="tb-swatches">
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#18171a;"></div><div class="tb-sw-n">Ink</div><div class="tb-sw-h">#18171A</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#6b5f57;"></div><div class="tb-sw-n">Taupe</div><div class="tb-sw-h">#6B5F57</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#9a8e86;"></div><div class="tb-sw-n">Warm Grey</div><div class="tb-sw-h">#9A8E86</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#b89490;"></div><div class="tb-sw-n">Rose</div><div class="tb-sw-h">#B89490</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#c2b5a8;"></div><div class="tb-sw-n">Sand</div><div class="tb-sw-h">#C2B5A8</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#ddd0c4;"></div><div class="tb-sw-n">Blush</div><div class="tb-sw-h">#DDD0C4</div></div>
+          <div class="tb-sw"><div class="tb-sw-c" style="background:#f2ede6;border:1px solid #e8dbd4;"></div><div class="tb-sw-n">Ivory</div><div class="tb-sw-h">#F2EDE6</div></div>
+        </div>
+        <div class="tb-grad"></div>
+        <p class="tb-grad-label">Full Warm Tonal Range — Ink to Ivory</p>
+      </div>
+      <div>
+        <p class="tb-type-label">Typography System</p>
+        <div class="tb-t-item"><div class="tb-t-role">Display · Brand Name</div><div class="tb-t-cinzel">Cinzel</div><div class="tb-t-meta">Shared with Innate Wellness parent</div></div>
+        <div class="tb-t-item"><div class="tb-t-role">Editorial · Lifestyle Accent</div><div class="tb-t-corm">Cormorant</div><div class="tb-t-meta">Cormorant Garamond Italic · Warmer, softer</div></div>
+        <div class="tb-t-item"><div class="tb-t-role">Body · Marketing · UI</div><div class="tb-t-mont">Montserrat · Raleway Light<br>Your Wellness, Tailored.</div><div class="tb-t-meta">Montserrat 200 + Raleway 300</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TB LOGOS -->
+<section class="tb-logos">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-rose);font-family:'Cormorant Garamond',serif;font-style:italic;">08</span> Tailored — Logo Variants</div>
+    <div class="tb-logo-grid">
+      <div class="tb-lv tlv-cream">
+        <div class="tb-le" style="color:var(--tb-taupe);"><span class="tb-le-letter" style="color:var(--tb-taupe);">io</span></div>
+        <div style="color:var(--tb-ink);"><div class="tb-wm-main">TAILORED</div><div class="tb-wm-by">BY INNATE</div><div class="tb-wm-tag">Concierge IV & Aesthetics</div></div>
+        <div class="tb-lv-label" style="color:var(--tb-taupe);">Primary Light</div>
+      </div>
+      <div class="tb-lv tlv-blush">
+        <div class="tb-le" style="color:var(--tb-taupe);"><span class="tb-le-letter" style="color:var(--tb-taupe);">io</span></div>
+        <div style="color:var(--tb-ink);"><div class="tb-wm-main">TAILORED</div><div class="tb-wm-by">BY INNATE</div><div class="tb-wm-tag">Concierge IV & Aesthetics</div></div>
+        <div class="tb-lv-label" style="color:var(--tb-taupe);">Warm Blush</div>
+      </div>
+      <div class="tb-lv tlv-dark">
+        <div class="tb-le" style="color:var(--tb-ivory);"><span class="tb-le-letter" style="color:var(--tb-ivory);">io</span></div>
+        <div style="color:var(--tb-ivory);"><div class="tb-wm-main">TAILORED</div><div class="tb-wm-by">BY INNATE</div><div class="tb-wm-tag">Concierge IV & Aesthetics</div></div>
+        <div class="tb-lv-label" style="color:rgba(242,237,230,.3);">Reversed Dark</div>
+      </div>
+      <div class="tb-lv tlv-rose">
+        <div class="tb-le" style="color:var(--tb-cream);"><span class="tb-le-letter" style="color:var(--tb-cream);">io</span></div>
+        <div style="color:var(--tb-cream);"><div class="tb-wm-main">TAILORED</div><div class="tb-wm-by">BY INNATE</div><div class="tb-wm-tag">Concierge IV & Aesthetics</div></div>
+        <div class="tb-lv-label" style="color:rgba(250,247,242,.4);">Rose Premium</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TB MESSAGING -->
+<section class="tb-msg">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-warm-grey);font-family:'Cormorant Garamond',serif;font-style:italic;">09</span> Brand Voice & Messaging</div>
+    <div class="tb-tagline">
+      <div class="tb-tl-eye">Tailored by Innate — Core Taglines</div>
+      <div class="tb-tl-main">Hydrate.<br>Recover. Thrive.</div>
+      <div class="tb-tl-sub">Concierge IV & Aesthetics, tailored to you.</div>
+    </div>
+    <div class="tb-msg-cards">
+      <div class="tb-mc"><div class="tb-mc-tag">Hero</div><div class="tb-mc-h">Your Wellness.<br>Tailored.</div><div class="tb-mc-b">Premium IV therapy delivered wherever you are. Clinician-directed, luxury-executed, personalized to you.</div></div>
+      <div class="tb-mc"><div class="tb-mc-tag">Aesthetics</div><div class="tb-mc-h">Glow From<br>Within.</div><div class="tb-mc-b">Glutathione, NAD+, and beauty-forward infusions designed to illuminate — from the inside out.</div></div>
+      <div class="tb-mc"><div class="tb-mc-tag">Recovery</div><div class="tb-mc-h">Care in<br>Progress.</div><div class="tb-mc-b">Post-event, post-flight, post-workout. Elite recovery protocols delivered directly to your door.</div></div>
+      <div class="tb-mc"><div class="tb-mc-tag">Mobile</div><div class="tb-mc-h">Wellness,<br>Delivered.</div><div class="tb-mc-b">Home. Hotel. Office. Wherever your life happens — Tailored shows up for it, fully equipped.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TB JOURNEY -->
+<section class="tb-journey">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-taupe);font-family:'Cormorant Garamond',serif;font-style:italic;">10</span> Client Experience Journey</div>
+    <div class="tb-steps">
+      <div class="tb-step"><div class="tb-sn">1</div><div class="tb-st">Book</div><div class="tb-sd">Choose your service and location — we handle everything else</div></div>
+      <div class="tb-step"><div class="tb-sn">2</div><div class="tb-st">Consult</div><div class="tb-sd">A clinician customizes your formula to your specific needs</div></div>
+      <div class="tb-step"><div class="tb-sn">3</div><div class="tb-st">Arrive</div><div class="tb-sd">Our team arrives fully equipped at your chosen location</div></div>
+      <div class="tb-step"><div class="tb-sn">4</div><div class="tb-st">Restore</div><div class="tb-sd">Relax as your custom infusion works from the inside out</div></div>
+      <div class="tb-step"><div class="tb-sn">5</div><div class="tb-st">Thrive</div><div class="tb-sd">Feel the difference — and explore the full Innate ecosystem</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TB REFERRAL -->
+<section class="tb-ref">
+  <div class="w">
+    <div class="sec-tag"><span class="num" style="color:var(--tb-warm-grey);font-family:'Cormorant Garamond',serif;font-style:italic;">11</span> Referral & Growth Marketing</div>
+    <div class="tb-ref-grid">
+      <div class="trc trc-dark">
+        <div class="trc-eye">Client Referral Program</div>
+        <div class="trc-h">Refer.<br>Reward.<br>Wellness.</div>
+        <div class="trc-amt"><sup>$</sup>25</div>
+        <div class="trc-txt">Refer a friend to Tailored by Innate and you both receive $25 off your next service. The most powerful marketing is a client who felt the difference.</div>
+        <div class="trc-btn">Share the Experience</div>
+      </div>
+      <div class="trc trc-warm">
+        <div class="trc-eye">Event & Pop-Up Wellness</div>
+        <div class="trc-h">Bring Tailored<br>to Your World.</div>
+        <div class="trc-txt">Host a wellness pop-up at your corporate retreat, private event, or office. IV drips, beauty infusions, and aesthetic treatments — curated for your guests, delivered with white-glove care.</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--tb-warm-grey);line-height:1.8;max-width:380px;">"A luxury IV & wellness experience — wherever life takes you."</div>
+        <div class="trc-btn">Inquire About Events</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSER -->
+<section class="closer">
+  <p class="closer-eye">The Innate Wellness Family · Brand Vision · 2026</p>
+  <h2 class="closer-h">Two brands built to <em>own</em><br>the DFW wellness market.</h2>
+  <p class="closer-sub">Functional Medicine & Optimization · Concierge IV & Aesthetics<br>One clinical standard · Two distinct experiences · Limitless growth</p>
+  <div class="closer-marks">
+    <div class="closer-item"><div class="closer-sq">io</div><div class="closer-name">INNATE WELLNESS</div><div class="closer-role">The Institution</div></div>
+    <div class="closer-plus">+</div>
+    <div class="closer-item"><div class="closer-rnd">io</div><div class="closer-name">TAILORED<br>BY INNATE</div><div class="closer-role">The Experience</div></div>
+  </div>
+  <div class="closer-line"></div>
+  <p class="closer-foot">Optimization · Performance · Longevity · Hydration · Recovery · Aesthetics</p>
+</section>
+
+</body>
+</html>
