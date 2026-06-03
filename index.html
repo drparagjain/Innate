@@ -481,11 +481,111 @@ footer { background: var(--iw-charcoal); border-top: 1px solid var(--iw-line); p
 .d3 { transition-delay: 0.3s; }
 .d4 { transition-delay: 0.4s; }
 
+/* ── IV THERAPY (TAILORED BY INNATE) ── */
+.iv-therapy {
+  background: #f2ece0;
+  padding: 120px 72px;
+  position: relative; overflow: hidden;
+}
+.iv-therapy::before {
+  content: 'IV';
+  position: absolute; font-family: 'Cinzel', serif; font-size: 420px; font-weight: 600;
+  color: rgba(58,80,64,0.04); top: 50%; left: 50%;
+  transform: translate(-50%,-50%); white-space: nowrap; letter-spacing: 0.15em; pointer-events: none;
+}
+.iv-section-tag {
+  font-size: 7.5px; font-weight: 600; letter-spacing: 0.52em; text-transform: uppercase;
+  color: rgba(58,80,64,0.6);
+  display: flex; align-items: center; gap: 20px; margin-bottom: 60px;
+}
+.iv-section-tag::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(58,80,64,0.25), transparent); }
+.iv-section-tag .sec-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; font-weight: 300; color: #3a5040; }
+.iv-header { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: end; margin-bottom: 72px; }
+.iv-heading {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(30px, 3.8vw, 52px); font-weight: 400; letter-spacing: 0.04em; line-height: 1.18;
+  color: #162118; margin-bottom: 14px;
+}
+.iv-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px; font-weight: 300; line-height: 1.9;
+  color: rgba(22,33,24,0.52); max-width: 480px;
+}
+.iv-eyebrow {
+  font-size: 8.5px; font-weight: 500; letter-spacing: 0.45em; text-transform: uppercase;
+  color: #3a5040; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 16px;
+}
+.iv-eyebrow::before { content: ''; width: 36px; height: 1px; background: rgba(58,80,64,0.4); }
+.iv-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+.iv-card {
+  padding: 32px 24px 36px;
+  background: #ede8dc;
+  border-top: 1px solid rgba(58,80,64,0.16);
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  position: relative;
+}
+.iv-card:hover {
+  background: #e6dfd1;
+  border-top-color: #3a5040;
+  transform: translateY(-3px);
+}
+.iv-card-icon { font-size: 16px; opacity: 0.6; transition: opacity 0.25s ease; }
+.iv-card:hover .iv-card-icon { opacity: 1; }
+.iv-card-name {
+  font-size: 8.5px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
+  color: #162118;
+}
+.iv-card-tagline {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: 13px; font-weight: 400; color: rgba(58,80,64,0.8); line-height: 1.4;
+}
+.iv-card-ingredients {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(22,33,24,0.35); padding-top: 6px;
+  border-top: 1px solid rgba(58,80,64,0.12);
+}
+.iv-card-desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11.5px; font-weight: 300; line-height: 1.75;
+  color: rgba(22,33,24,0.5); flex: 1;
+}
+.iv-card-cta {
+  margin-top: 8px;
+  font-size: 8px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+  color: #3a5040; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+.iv-card-cta:hover { color: #162118; gap: 14px; }
+.iv-banner {
+  margin-top: 56px; padding: 40px 48px;
+  background: rgba(58,80,64,0.08);
+  border: 1px solid rgba(58,80,64,0.18);
+  display: flex; align-items: center; justify-content: space-between; gap: 48px;
+}
+.iv-banner-text {
+  font-family: 'Cormorant Garamond', serif; font-style: italic;
+  font-size: clamp(18px, 2.2vw, 26px); font-weight: 300;
+  color: #162118; line-height: 1.5;
+}
+.iv-banner-text em { color: #3a5040; font-style: normal; }
+.btn-iv {
+  font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+  color: #f2ece0; background: #3a5040; border: 1px solid #3a5040;
+  padding: 15px 36px; text-decoration: none; flex-shrink: 0;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  display: inline-block;
+}
+.btn-iv:hover { background: #162118; border-color: #162118; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1280px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .process-steps { grid-template-columns: repeat(3, 1fr); gap: 48px; }
   .process-steps::before { display: none; }
+  .iv-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 1024px) {
   .hero { padding: 0 40px 64px; }
@@ -497,6 +597,10 @@ footer { background: var(--iw-charcoal); border-top: 1px solid var(--iw-line); p
   .membership { padding: 88px 40px; }
   .mem-grid { grid-template-columns: 1fr; }
   .process { padding: 88px 40px; }
+  .iv-therapy { padding: 88px 40px; }
+  .iv-grid { grid-template-columns: repeat(2, 1fr); }
+  .iv-header { grid-template-columns: 1fr; }
+  .iv-banner { flex-direction: column; gap: 28px; }
   .cta-banner { padding: 88px 40px; }
   footer { padding: 56px 40px 40px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
@@ -513,6 +617,8 @@ footer { background: var(--iw-charcoal); border-top: 1px solid var(--iw-line); p
   .membership { padding: 72px 24px; }
   .process { padding: 72px 24px; }
   .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .iv-therapy { padding: 72px 24px; }
+  .iv-grid { grid-template-columns: 1fr; }
   .special { padding: 56px 24px; }
   .special-inner { flex-direction: column; gap: 24px; }
   .cta-banner { padding: 72px 24px; }
@@ -814,6 +920,123 @@ footer { background: var(--iw-charcoal); border-top: 1px solid var(--iw-line); p
         <div class="step-title">Evolve</div>
         <div class="step-desc">Continuous monitoring, adjustment, and refinement — your biology is never static</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAILORED BY INNATE — IV THERAPY -->
+<section class="iv-therapy" id="iv-therapy">
+  <div class="w">
+    <div class="iv-section-tag fade-up"><span class="sec-num">06</span> Tailored by Innate</div>
+    <div class="iv-header">
+      <div>
+        <div class="iv-eyebrow fade-up">IV Infusion Menu</div>
+        <h2 class="iv-heading fade-up">Clinician-Crafted<br>Infusions.</h2>
+        <p class="iv-sub fade-up d1">Every drip is formulated by our clinicians and tailored to your biology — not an off-the-shelf protocol. From cellular energy to immune fortification, each infusion targets a specific physiological outcome.</p>
+      </div>
+      <div>
+        <a href="https://www.innate-dfw.com/" class="btn-ghost fade-up" target="_blank" rel="noopener" style="color:rgba(22,33,24,0.45);">Book a Drip <span>→</span></a>
+      </div>
+    </div>
+    <div class="iv-grid">
+
+      <div class="iv-card fade-up">
+        <div class="iv-card-icon">⚗️</div>
+        <div class="iv-card-name">Myers' Cocktail</div>
+        <div class="iv-card-tagline">The gold-standard foundational drip</div>
+        <div class="iv-card-ingredients">Mg · Ca · B-Complex · B12 · Vit C</div>
+        <div class="iv-card-desc">The benchmark IV infusion. Restores micronutrient deficiencies, combats chronic fatigue, eases migraines, and primes your immune system for sustained performance.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d1">
+        <div class="iv-card-icon">⚡</div>
+        <div class="iv-card-name">NAD+</div>
+        <div class="iv-card-tagline">Cellular energy & anti-aging</div>
+        <div class="iv-card-ingredients">Nicotinamide Adenine Dinucleotide</div>
+        <div class="iv-card-desc">Replenishes your mitochondrial fuel at the cellular level. Enhances cognitive clarity, accelerates metabolism, supports addiction recovery, and slows biological aging.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d2">
+        <div class="iv-card-icon">🛡️</div>
+        <div class="iv-card-name">High-Dose Vitamin C</div>
+        <div class="iv-card-tagline">Immune armor & antioxidant protection</div>
+        <div class="iv-card-ingredients">Ascorbic Acid 15–50g</div>
+        <div class="iv-card-desc">Mega-dose ascorbic acid delivered directly to the bloodstream — bypassing GI absorption limits. Fortifies immunity, neutralizes free radicals, and drives collagen synthesis.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d3">
+        <div class="iv-card-icon">✦</div>
+        <div class="iv-card-name">Glutathione</div>
+        <div class="iv-card-tagline">The master antioxidant</div>
+        <div class="iv-card-ingredients">Reduced Glutathione</div>
+        <div class="iv-card-desc">Your body's most powerful detoxifier. Clears oxidative stress, supports liver function, enhances skin luminosity, and provides deep cellular protection against inflammation.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up">
+        <div class="iv-card-icon">🏃</div>
+        <div class="iv-card-name">Athletic Recovery</div>
+        <div class="iv-card-tagline">Performance restoration</div>
+        <div class="iv-card-ingredients">Amino Acids · Mg · B-Complex · Electrolytes</div>
+        <div class="iv-card-desc">Engineered for serious athletes. Accelerates muscle fiber repair, reduces DOMS, replenishes electrolyte reserves, and restores peak neuromuscular function post-training.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d1">
+        <div class="iv-card-icon">🧠</div>
+        <div class="iv-card-name">Brain + Focus</div>
+        <div class="iv-card-tagline">Cognitive elevation</div>
+        <div class="iv-card-ingredients">Alpha-Lipoic Acid · B12 · Mg · Taurine</div>
+        <div class="iv-card-desc">Fuel your prefrontal cortex. Sharpens mental clarity, improves working memory, combats brain fog, and protects neural tissue against oxidative degradation.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d2">
+        <div class="iv-card-icon">◈</div>
+        <div class="iv-card-name">Immune Shield</div>
+        <div class="iv-card-tagline">Rapid-response defense</div>
+        <div class="iv-card-ingredients">Zinc · Vit C · B-Complex · Selenium</div>
+        <div class="iv-card-desc">A concentrated immune activation protocol. Deployed at the first sign of illness or before high-exposure periods to mount a fast, coordinated immune response.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d3">
+        <div class="iv-card-icon">◎</div>
+        <div class="iv-card-name">Luminosity</div>
+        <div class="iv-card-tagline">Beauty from within</div>
+        <div class="iv-card-ingredients">Biotin · Glutathione · Vit C · Zinc</div>
+        <div class="iv-card-desc">A beauty-focused infusion targeting radiant skin, stronger hair and nails, and a visible glow — driven by collagen production and intracellular brightening from the inside out.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up">
+        <div class="iv-card-icon">▣</div>
+        <div class="iv-card-name">Metabolic Burn</div>
+        <div class="iv-card-tagline">Weight & metabolism support</div>
+        <div class="iv-card-ingredients">L-Carnitine · B-Complex · MIC Complex</div>
+        <div class="iv-card-desc">Activates fat transport pathways at the cellular level. L-Carnitine shuttles fatty acids into mitochondria; MIC complex enhances liver function and lipid metabolism.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+      <div class="iv-card fade-up d1">
+        <div class="iv-card-icon">💧</div>
+        <div class="iv-card-name">Hydration + Relief</div>
+        <div class="iv-card-tagline">Rapid rehydration & recovery</div>
+        <div class="iv-card-ingredients">Normal Saline · Electrolytes · B-Vitamins</div>
+        <div class="iv-card-desc">Instant rehydration delivered at clinical speed. Ideal for hangover recovery, jet lag, dehydration, or as a baseline reset before any other therapeutic protocol.</div>
+        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      </div>
+
+    </div>
+
+    <div class="iv-banner fade-up">
+      <div class="iv-banner-text">
+        Every infusion is <em>clinician-supervised</em> and can be customized with add-on boosters — including Magnesium, Biotin, Zofran, Toradol, and specialty amino acids.
+      </div>
+      <a href="https://www.innate-dfw.com/" class="btn-iv" target="_blank" rel="noopener">Schedule Your Infusion</a>
     </div>
   </div>
 </section>
