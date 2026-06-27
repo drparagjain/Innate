@@ -258,6 +258,102 @@ nav{
    ═══ TAILORED BY INNATE ═══
 ══════════════════════════════════════════════════════════════ */
 
+/* ── BRAND GATEWAY ── */
+.brand-gateway{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--i-black);
+  border-bottom:1px solid var(--i-border);
+  cursor:pointer;
+}
+.bg-card{
+  padding:72px 80px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+  border-right:1px solid var(--i-border);
+  transition:background .25s;
+  text-decoration:none;
+}
+.bg-card:last-child{border-right:none;}
+.bg-card.innate-card:hover{background:rgba(26,61,40,.45);}
+.bg-card.tailored-card{background:var(--t-ivory);}
+.bg-card.tailored-card:hover{background:var(--t-petal);}
+.bgc-eye{font-size:8.5px;letter-spacing:.38em;text-transform:uppercase;font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.innate-card .bgc-eye{color:var(--i-sage-light);}
+.innate-card .bgc-eye::before{content:'';width:16px;height:1px;background:var(--i-sage-light);}
+.tailored-card .bgc-eye{color:var(--t-rose);}
+.tailored-card .bgc-eye::before{content:'';width:16px;height:1px;background:var(--t-rose);}
+.bgc-h{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:18px;}
+.innate-card .bgc-h{color:var(--i-white);}
+.innate-card .bgc-h em{font-style:italic;color:var(--i-sage-light);}
+.tailored-card .bgc-h{color:var(--t-ink);}
+.tailored-card .bgc-h em{font-style:italic;color:var(--t-rose);}
+.bgc-sub{font-size:12px;line-height:1.95;margin-bottom:36px;max-width:380px;}
+.innate-card .bgc-sub{color:var(--i-muted);}
+.tailored-card .bgc-sub{color:var(--t-taupe);}
+.bgc-arrow{display:flex;align-items:center;gap:12px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;transition:gap .2s;}
+.bg-card:hover .bgc-arrow{gap:20px;}
+.innate-card .bgc-arrow{color:var(--i-sage-light);}
+.tailored-card .bgc-arrow{color:var(--t-rose);}
+.bgc-arrow i{font-size:16px;transition:transform .2s;}
+.bg-card:hover .bgc-arrow i{transform:translateX(4px);}
+.bgc-tag{position:absolute;top:28px;right:28px;font-size:8px;letter-spacing:.28em;text-transform:uppercase;padding:6px 14px;border-radius:0;}
+.innate-card .bgc-tag{border:1px solid var(--i-border);color:rgba(247,243,238,.25);}
+.tailored-card .bgc-tag{border:1px solid var(--t-line);color:var(--t-warm);}
+@media(max-width:768px){
+  .brand-gateway{grid-template-columns:1fr;}
+  .bg-card{border-right:none!important;border-bottom:1px solid var(--i-border);padding:48px 28px;}
+}
+
+/* ── BACK TO TOP BUTTON ── */
+.back-to-top{
+  position:fixed;bottom:36px;right:36px;z-index:200;
+  width:48px;height:48px;
+  background:var(--i-green);border:1px solid rgba(247,243,238,.14);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;pointer-events:none;
+  transition:opacity .3s,background .2s,transform .2s;
+}
+.back-to-top.visible{opacity:1;pointer-events:auto;}
+.back-to-top:hover{background:var(--i-sage);transform:translateY(-2px);}
+.back-to-top i{font-size:20px;color:var(--i-white);}
+
+/* ── RN PHOTO FRAME (Tailored Hero) ── */
+.rn-photo-side{
+  background:var(--t-ivory);
+  padding:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  position:relative;overflow:hidden;
+}
+.rn-photo-frame{
+  width:100%;height:100%;
+  position:relative;overflow:hidden;
+  min-height:540px;
+}
+.rn-photo-frame img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  filter:saturate(0.88);display:block;
+}
+.rn-photo-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(24,23,26,.55) 100%);
+}
+.rn-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 36px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.rn-cap-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;font-weight:400;color:var(--t-cream);letter-spacing:.02em;}
+.rn-cap-title{font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(250,247,242,.6);font-weight:500;}
+.rn-note{
+  position:absolute;top:28px;right:28px;left:28px;
+  background:rgba(250,247,242,.06);border:1px solid rgba(184,148,144,.15);
+  backdrop-filter:blur(8px);
+  padding:16px 20px;display:flex;align-items:center;gap:12px;
+}
+.rn-note i{font-size:13px;color:var(--t-rose);flex-shrink:0;}
+.rn-note p{font-size:10px;color:rgba(250,247,242,.5);line-height:1.75;letter-spacing:.03em;}
+@media(max-width:1024px){.rn-photo-frame{min-height:420px;}}
+
 /* ── TAILORED HERO (HERO 2) ── */
 .hero-tailored{
   background:var(--t-ink);
@@ -297,8 +393,8 @@ nav{
 .ht-pills span{font-size:8.5px;letter-spacing:.22em;color:rgba(184,148,144,.55);text-transform:uppercase;border:1px solid rgba(184,148,144,.18);padding:6px 14px;}
 .ht-right{
   background:var(--t-ivory);
-  padding:80px 60px;
-  display:flex;flex-direction:column;justify-content:center;gap:2px;
+  padding:0;
+  display:flex;flex-direction:column;justify-content:stretch;
 }
 .ht-stat-card{background:var(--t-cream);border:1px solid var(--t-line);padding:32px 36px;}
 .ht-stat-card:hover{background:rgba(184,148,144,.06);}
@@ -436,7 +532,7 @@ footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,1
   .hero-bottom{flex-direction:column;align-items:flex-start;gap:32px;}
   .hb-right{align-items:flex-start;}
   .hero-tailored-inner{grid-template-columns:1fr;}
-  .ht-right{padding:48px 60px;}
+  .rn-photo-frame{min-height:380px;}
   .t-fitness-inner{grid-template-columns:1fr;gap:48px;}
   .book-grid{grid-template-columns:1fr;gap:48px;}
   .innate-link-band{flex-direction:column;gap:24px;}
@@ -449,7 +545,7 @@ footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,1
 @media(max-width:768px){
   .hero-innate,.i-section,.t-section,.t-addons,.t-events,.t-fitness,.t-booking,.innate-link-band{padding-left:28px;padding-right:28px;}
   .ht-left{padding:72px 28px 56px;}
-  .ht-right{padding:48px 28px;}
+  .rn-photo-frame{min-height:320px;}
   .services-grid{grid-template-columns:1fr;}
   .svc-card:nth-child(n){border-right:none;}
   .why-grid{grid-template-columns:repeat(2,1fr);}
@@ -528,6 +624,28 @@ footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,1
     </div>
   </div>
 </section>
+
+<!-- BRAND GATEWAY -->
+<div class="brand-gateway">
+  <a class="bg-card innate-card" href="#services">
+    <span class="bgc-tag">Concierge Medicine</span>
+    <div>
+      <p class="bgc-eye">Innate Wellness</p>
+      <h2 class="bgc-h">Elite Concierge<br><em>Healthcare.</em></h2>
+      <p class="bgc-sub">Clinician-directed, evidence-based care for high-performing men and women — delivered to you, built around your biology.</p>
+    </div>
+    <div class="bgc-arrow">Explore Innate <i class="ti ti-arrow-right"></i></div>
+  </a>
+  <a class="bg-card tailored-card" href="#tailored">
+    <span class="bgc-tag">Mobile IV Therapy</span>
+    <div>
+      <p class="bgc-eye">Tailored by Innate</p>
+      <h2 class="bgc-h"><em>Tailored</em><br>by Innate.</h2>
+      <p class="bgc-sub">Clinician-designed IV infusions brought to your home, office, or event. No membership required — just elite care on your terms.</p>
+    </div>
+    <div class="bgc-arrow">Explore Tailored <i class="ti ti-arrow-right"></i></div>
+  </a>
+</div>
 
 <!-- TICKER -->
 <div class="ticker" aria-hidden="true">
@@ -859,25 +977,18 @@ footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,1
         <span>Throughout DFW</span>
       </div>
     </div>
-    <div class="ht-right">
-      <div class="ht-stat-card">
-        <p class="hsc-label">Licensed Clinicians</p>
-        <p class="hsc-val">RN</p>
-        <p class="hsc-note">Every session administered by a licensed RN — not a technician, not a certificate course.</p>
-      </div>
-      <div class="ht-stat-card">
-        <p class="hsc-label">Service Area</p>
-        <p class="hsc-val">DFW</p>
-        <p class="hsc-note">We come to you — your home, office, hotel suite, gym, or event venue. Anywhere in Dallas–Fort Worth.</p>
-      </div>
-      <div class="ht-stat-card">
-        <p class="hsc-label">Groups Welcome</p>
-        <p class="hsc-val">2+</p>
-        <p class="hsc-note">Intimate sessions to large-scale events — Bachelorette parties, marathons, corporate pop-ups, and more.</p>
-      </div>
-      <div class="ht-note-card">
-        <i class="ti ti-info-circle"></i>
-        <p>Tailored by Innate is open to everyone — no Innate Wellness membership required. Members receive exclusive pricing on all services.</p>
+    <div class="rn-photo-side">
+      <div class="rn-photo-frame">
+        <img src="brand_assests/OIP-690980870.jpg" alt="Rebecca Russ — Licensed RN, Tailored by Innate">
+        <div class="rn-photo-overlay"></div>
+        <div class="rn-note">
+          <i class="ti ti-info-circle"></i>
+          <p>Open to everyone — no membership required. Innate members receive exclusive pricing on all services.</p>
+        </div>
+        <div class="rn-caption">
+          <span class="rn-cap-name">Rebecca Russ</span>
+          <span class="rn-cap-title">Licensed RN · Tailored by Innate</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1256,6 +1367,11 @@ footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,1
   </div>
 </footer>
 
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="ti ti-arrow-up"></i>
+</button>
+
 <script>
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1267,6 +1383,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Back to top visibility
+const btn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  btn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 </script>
 </body>
 </html>
