@@ -3,1183 +3,1270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Innate Wellness — Functional Medicine & Optimization | DFW</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<title>The Innate Family — Concierge Medicine & Tailored by Innate | DFW</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-:root {
-  --iw-black:       #0a0b0a;
-  --iw-charcoal:    #111312;
-  --iw-forest:      #162118;
-  --iw-forest-mid:  #1e2e20;
-  --iw-sage:        #3a5040;
-  --iw-sage-light:  #6a8a70;
-  --iw-white:       #f5f5f3;
-  --iw-off-white:   #ece9e3;
-  --iw-muted:       rgba(245,245,243,0.45);
-  --iw-line:        rgba(245,245,243,0.07);
-  --iw-sage-line:   rgba(58,80,64,0.5);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+
+/* ── INNATE TOKENS ── */
+:root{
+  --i-black:#0b1c14;
+  --i-mid:#0f2219;
+  --i-green:#1a3d28;
+  --i-sage:#3a5040;
+  --i-sage-light:#6a8a70;
+  --i-sage-line:rgba(58,80,64,.45);
+  --i-white:#f7f3ee;
+  --i-muted:rgba(247,243,238,.5);
+  --i-faint:rgba(247,243,238,.07);
+  --i-border:rgba(247,243,238,.07);
+  /* Tailored tokens */
+  --t-ink:#18171a;
+  --t-taupe:#6b5f57;
+  --t-warm:#9a8e86;
+  --t-sand:#c2b5a8;
+  --t-rose:#b89490;
+  --t-rose-mid:rgba(184,148,144,.55);
+  --t-rose-faint:rgba(184,148,144,.10);
+  --t-petal:#e8dbd4;
+  --t-ivory:#f2ede6;
+  --t-cream:#faf7f2;
+  --t-line:rgba(107,95,87,.16);
+  --t-line-soft:rgba(107,95,87,.08);
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--iw-black);
-  color: var(--iw-white);
-  margin: 0;
-}
+body{font-family:'Montserrat',sans-serif;font-weight:300;background:var(--i-black);color:var(--i-white);overflow-x:hidden;}
 
-/* ── NAV ── */
-#nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 0 64px;
-  height: 72px;
-  display: flex; align-items: center; justify-content: space-between;
-  transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
-  border-bottom: 1px solid transparent;
+/* ══════════════════════════════
+   TOP BAR
+══════════════════════════════ */
+.top-bar{
+  background:rgba(10,11,10,.95);
+  border-bottom:1px solid var(--i-border);
+  padding:9px 60px;
+  display:flex;align-items:center;justify-content:space-between;
 }
-#nav.scrolled {
-  background: rgba(10,11,10,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-color: var(--iw-line);
-}
-.nav-logo { height: 34px; filter: invert(1); display: block; }
-.nav-links { display: flex; align-items: center; gap: 44px; }
-.nav-link {
-  font-size: 9.5px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase;
-  color: rgba(245,245,243,0.5); text-decoration: none;
-  transition: color 0.2s ease;
-}
-.nav-link:hover { color: var(--iw-white); }
-.nav-cta {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase;
-  color: var(--iw-sage-light); border: 1px solid var(--iw-sage-line);
-  padding: 11px 26px; text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.nav-cta:hover { background: var(--iw-sage); color: var(--iw-white); border-color: var(--iw-sage); }
-.nav-cta:active { transform: scale(0.98); }
+.tb-left{font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(247,243,238,.28);}
+.tb-right{display:flex;align-items:center;gap:28px;}
+.tb-phone{font-size:11px;letter-spacing:.06em;color:var(--i-sage-light);text-decoration:none;display:flex;align-items:center;gap:7px;}
+.tb-phone i{font-size:12px;}
+.tb-note{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,243,238,.2);font-style:italic;}
 
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  background: var(--iw-black);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 72px 80px;
-  position: relative; overflow: hidden;
+/* ══════════════════════════════
+   NAV
+══════════════════════════════ */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 60px;
+  background:rgba(11,28,20,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--i-border);
 }
-.hero-grad-1 {
-  position: absolute; top: -200px; right: -150px;
-  width: 1000px; height: 1000px;
-  background: radial-gradient(ellipse, rgba(22,33,24,0.85) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero-grad-2 {
-  position: absolute; bottom: -150px; left: -200px;
-  width: 700px; height: 700px;
-  background: radial-gradient(ellipse, rgba(30,46,32,0.35) 0%, transparent 60%);
-  pointer-events: none;
-}
-.hero-noise {
-  position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
-.hero-content { position: relative; z-index: 2; max-width: 960px; }
-.hero-eyebrow {
-  font-size: 8.5px; font-weight: 500; letter-spacing: 0.55em; text-transform: uppercase;
-  color: var(--iw-sage-light); margin-bottom: 36px;
-  display: flex; align-items: center; gap: 20px;
-}
-.hero-eyebrow::before { content: ''; width: 48px; height: 1px; background: var(--iw-sage-line); }
-.hero-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(54px, 8.5vw, 116px);
-  font-weight: 400; letter-spacing: -0.02em; line-height: 0.97;
-  color: var(--iw-white); margin-bottom: 36px;
-}
-.hero-heading em {
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
-  color: var(--iw-sage-light); letter-spacing: 0.01em;
-}
-.hero-sub {
-  font-family: 'Raleway', sans-serif;
-  font-size: 14.5px; font-weight: 300; line-height: 1.85;
-  color: rgba(245,245,243,0.48);
-  max-width: 520px; margin-bottom: 52px;
-}
-.hero-actions { display: flex; align-items: center; gap: 28px; }
-.btn-primary {
-  font-size: 9.5px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--iw-white); background: var(--iw-sage); border: 1px solid var(--iw-sage);
-  padding: 16px 40px; text-decoration: none;
-  transition: background 0.25s ease, border-color 0.25s ease;
-  display: inline-block;
-}
-.btn-primary:hover { background: var(--iw-forest-mid); border-color: var(--iw-sage-light); }
-.btn-primary:active { opacity: 0.8; }
-.btn-ghost {
-  font-size: 9.5px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(245,245,243,0.42); text-decoration: none;
-  display: inline-flex; align-items: center; gap: 12px;
-  transition: color 0.25s ease;
-}
-.btn-ghost span { transition: transform 0.25s ease; }
-.btn-ghost:hover { color: var(--iw-white); }
-.btn-ghost:hover span { transform: translateX(5px); }
+.nav-logo img{height:26px;width:auto;filter:invert(1);}
+.nav-links{display:flex;gap:36px;align-items:center;list-style:none;}
+.nav-links a{font-size:9.5px;letter-spacing:.28em;color:rgba(247,243,238,.45);text-transform:uppercase;text-decoration:none;transition:color .2s;font-weight:400;}
+.nav-links a:hover{color:var(--i-white);}
+.nav-divider{width:1px;height:16px;background:rgba(247,243,238,.12);}
+.nav-cta{font-size:9px;letter-spacing:.25em;color:var(--i-sage-light)!important;border:1px solid var(--i-sage-line);padding:9px 22px;transition:all .2s;border-radius:2px;}
+.nav-cta:hover{background:var(--i-sage)!important;color:var(--i-white)!important;border-color:var(--i-sage)!important;}
 
-.hero-stats {
-  position: absolute; bottom: 80px; right: 72px; z-index: 2;
-  display: flex; flex-direction: column; gap: 2px;
+/* ══════════════════════════════
+   INNATE HERO (HERO 1)
+══════════════════════════════ */
+.hero-innate{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  padding:120px 64px 80px;
+  background:radial-gradient(ellipse at 50% 30%,rgba(30,70,45,.45) 0%,var(--i-black) 65%);
 }
-.hero-stat {
-  padding: 14px 22px;
-  background: rgba(255,255,255,0.025);
-  border-right: 2px solid var(--iw-sage-line);
-  text-align: right;
+.hi-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(210,190,160,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(210,190,160,.025) 1px,transparent 1px);
+  background-size:80px 80px;
 }
-.stat-n {
-  font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300;
-  color: rgba(106,138,112,0.88); display: block; line-height: 1;
+.wordmark{display:flex;flex-direction:column;align-items:center;margin-bottom:52px;position:relative;z-index:2;}
+.wm-the{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.52em;color:rgba(247,243,238,.3);text-transform:uppercase;font-weight:300;margin-bottom:4px;}
+.wm-innate{font-family:'Cormorant Garamond',serif;font-size:clamp(80px,14vw,140px);font-weight:300;letter-spacing:.18em;color:#fff;line-height:1;text-transform:uppercase;}
+.wm-line{width:72px;height:1px;background:rgba(247,243,238,.28);margin:16px 0;}
+.wm-family{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.45em;color:rgba(247,243,238,.38);text-transform:uppercase;font-weight:300;}
+.hero-bottom{
+  width:100%;max-width:1400px;
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-top:32px;padding-top:36px;
+  border-top:1px solid rgba(247,243,238,.07);
+  position:relative;z-index:2;
 }
-.stat-l {
-  font-size: 7.5px; font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase;
-  color: rgba(245,245,243,0.28); display: block; margin-top: 5px;
-}
+.hb-left{max-width:520px;}
+.hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,76px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:18px;letter-spacing:.02em;}
+.hero-headline em{font-style:italic;color:var(--i-sage-light);}
+.hero-sub{font-size:14px;color:rgba(247,243,238,.65);line-height:1.95;margin-bottom:32px;font-weight:300;max-width:420px;}
+.hero-ctas{display:flex;align-items:center;gap:20px;}
+.btn-i-primary{font-size:9.5px;letter-spacing:.28em;color:var(--i-black);background:var(--i-white);text-transform:uppercase;text-decoration:none;padding:14px 36px;font-weight:600;transition:opacity .2s;display:inline-block;}
+.btn-i-primary:hover{opacity:.85;}
+.btn-i-ghost{font-size:9.5px;letter-spacing:.28em;color:rgba(247,243,238,.55);text-transform:uppercase;text-decoration:none;font-weight:400;transition:color .2s;}
+.btn-i-ghost:hover{color:var(--i-sage-light);}
+.hb-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px;padding-bottom:4px;}
+.hero-location{font-size:9.5px;letter-spacing:.26em;color:rgba(247,243,238,.3);text-transform:uppercase;display:flex;align-items:center;gap:6px;}
+.hero-pills{display:flex;flex-direction:column;align-items:flex-end;gap:7px;}
+.hero-pills span{font-size:8.5px;letter-spacing:.24em;color:rgba(247,243,238,.22);text-transform:uppercase;}
 
-/* ── MARQUEE ── */
-.marquee-wrap {
-  background: var(--iw-forest);
-  border-top: 1px solid rgba(58,80,64,0.3);
-  border-bottom: 1px solid rgba(58,80,64,0.3);
-  overflow: hidden; padding: 16px 0;
-}
-.marquee-track {
-  display: flex; gap: 0;
-  animation: marquee 36s linear infinite;
-  white-space: nowrap; width: max-content;
-}
-.marquee-item {
-  font-size: 8.5px; font-weight: 600; letter-spacing: 0.42em; text-transform: uppercase;
-  color: rgba(106,138,112,0.6); padding: 0 36px; flex-shrink: 0;
-}
-.marquee-dot { color: rgba(58,80,64,0.5); flex-shrink: 0; font-size: 8px; padding-top: 1px; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* ══════════════════════════════
+   TICKER
+══════════════════════════════ */
+.ticker{overflow:hidden;border-top:1px solid rgba(58,80,64,.3);border-bottom:1px solid rgba(58,80,64,.3);padding:14px 0;background:rgba(26,61,40,.4);}
+.ticker-inner{display:flex;gap:0;animation:ticker 32s linear infinite;white-space:nowrap;width:max-content;}
+.ticker-item{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(106,138,112,.6);padding:0 28px;flex-shrink:0;}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── SECTION UTILITIES ── */
-.w { max-width: 1400px; margin: 0 auto; }
-.sec-tag {
-  font-size: 7.5px; font-weight: 600; letter-spacing: 0.52em; text-transform: uppercase;
-  color: rgba(58,80,64,0.7);
-  display: flex; align-items: center; gap: 20px; margin-bottom: 60px;
-}
-.sec-tag::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(58,80,64,0.35), transparent); }
-.sec-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; font-weight: 300; }
+/* ══════════════════════════════
+   SHARED INNATE SECTION STYLES
+══════════════════════════════ */
+.i-section{padding:100px 60px;}
+.i-w{max-width:1400px;margin:0 auto;}
+.sec-label-i{font-size:9.5px;letter-spacing:.38em;color:rgba(247,243,238,.3);text-transform:uppercase;font-weight:400;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.sec-label-i::before{content:'';display:block;width:28px;height:1px;background:rgba(247,243,238,.2);}
+.section-heading-i{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,54px);font-weight:300;color:var(--i-white);line-height:1.2;margin-bottom:16px;}
+.section-heading-i em{font-style:italic;color:var(--i-sage-light);}
+.section-sub-i{font-size:12px;color:var(--i-muted);line-height:2;max-width:500px;margin-bottom:56px;}
 
-/* ── SERVICES ── */
-.services { background: var(--iw-charcoal); padding: 120px 72px; position: relative; overflow: hidden; }
-.services::before {
-  content: 'OPTIMIZE';
-  position: absolute; font-family: 'Cinzel', serif; font-size: 210px; font-weight: 600;
-  color: rgba(255,255,255,0.013); top: 50%; left: 50%;
-  transform: translate(-50%,-50%); white-space: nowrap; letter-spacing: 0.15em; pointer-events: none;
-}
-.services-header { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: end; margin-bottom: 72px; }
-.section-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(30px, 3.8vw, 52px); font-weight: 400; letter-spacing: 0.04em; line-height: 1.18;
-  color: var(--iw-white); margin-bottom: 14px;
-}
-.section-sub {
-  font-family: 'Raleway', sans-serif;
-  font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(245,245,243,0.38); max-width: 460px;
-}
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-.svc-card {
-  padding: 36px 28px; background: rgba(255,255,255,0.025);
-  border-top: 1px solid rgba(58,80,64,0.18);
-  display: flex; flex-direction: column; gap: 14px;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-.svc-card:hover { background: rgba(30,46,32,0.5); border-top-color: var(--iw-sage); }
-.svc-icon { font-size: 18px; opacity: 0.55; transition: opacity 0.25s ease; }
-.svc-card:hover .svc-icon { opacity: 1; }
-.svc-name {
-  font-size: 8.5px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--iw-white);
-}
-.svc-desc {
-  font-family: 'Raleway', sans-serif;
-  font-size: 11.5px; font-weight: 300; line-height: 1.75;
-  color: rgba(245,245,243,0.36);
-}
+/* ══════════════════════════════
+   SERVICES
+══════════════════════════════ */
+.services-bg{background:var(--i-mid);}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--i-border);}
+.svc-card{padding:36px 28px;border-right:1px solid var(--i-border);border-bottom:1px solid var(--i-border);transition:background .2s;cursor:pointer;}
+.svc-card:hover{background:var(--i-faint);}
+.svc-card:nth-child(4n){border-right:none;}
+.svc-card:nth-last-child(-n+4){border-bottom:none;}
+.svc-card i{font-size:20px;color:rgba(247,243,238,.5);display:block;margin-bottom:18px;transition:color .25s;}
+.svc-card:hover i{color:var(--i-sage-light);}
+.svc-card h3{font-size:10px;letter-spacing:.2em;color:var(--i-sage-light);text-transform:uppercase;font-weight:600;margin-bottom:11px;}
+.svc-card p{font-size:11.5px;color:rgba(247,243,238,.38);line-height:1.85;}
+.card-link{display:block;font-size:9px;letter-spacing:.2em;color:rgba(247,243,238,.22);text-transform:uppercase;margin-top:14px;transition:color .2s;}
+.svc-card:hover .card-link{color:rgba(247,243,238,.6);}
 
-/* ── PHILOSOPHY ── */
-.philosophy { background: var(--iw-forest); padding: 120px 72px; position: relative; overflow: hidden; }
-.philosophy::before {
-  content: '';
-  position: absolute; top: 0; right: 0; bottom: 0;
-  width: 50%; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.3));
-  pointer-events: none;
-}
-.phil-quote {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: clamp(26px, 3.8vw, 50px); font-weight: 300; line-height: 1.45;
-  color: var(--iw-white); max-width: 860px; margin: 0 auto 80px; text-align: center;
-}
-.phil-quote em { color: var(--iw-sage-light); font-style: normal; }
-.phil-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.phil-card {
-  padding: 40px 36px; background: rgba(0,0,0,0.18);
-  border-top: 1px solid rgba(58,80,64,0.3);
-  display: flex; flex-direction: column; gap: 14px;
-}
-.phil-tag {
-  font-size: 7.5px; font-weight: 700; letter-spacing: 0.42em; text-transform: uppercase;
-  color: var(--iw-sage-light);
-}
-.phil-h {
-  font-family: 'Cinzel', serif;
-  font-size: 19px; font-weight: 400; letter-spacing: 0.06em; line-height: 1.4;
-  color: var(--iw-white);
-}
-.phil-b {
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px; font-weight: 300; line-height: 1.9;
-  color: rgba(245,245,243,0.38);
-}
+/* ══════════════════════════════
+   WHY INNATE
+══════════════════════════════ */
+.why-bg{background:#f5f2ee;color:var(--t-ink);}
+.why-top{text-align:center;margin-bottom:40px;}
+.why-tag{font-size:9.5px;letter-spacing:.38em;color:var(--t-rose);text-transform:uppercase;font-weight:400;margin-bottom:12px;display:flex;justify-content:center;align-items:center;gap:12px;}
+.why-tag::before,.why-tag::after{content:'';width:24px;height:1px;background:var(--t-rose);}
+.why-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:400;color:var(--t-ink);line-height:1.35;margin-top:10px;}
+.why-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-bottom:36px;}
+.why-card{text-align:center;padding:8px;}
+.why-card i{font-size:22px;color:var(--t-rose);display:block;margin-bottom:14px;}
+.why-card h4{font-size:9.5px;letter-spacing:.18em;color:var(--t-ink);text-transform:uppercase;font-weight:700;margin-bottom:9px;}
+.why-card p{font-size:11.5px;color:#666;line-height:1.8;}
+.compare-table{display:grid;grid-template-columns:1fr 1px 1fr;max-width:780px;margin:0 auto;border:1px solid rgba(0,0,0,.08);}
+.compare-col{padding:32px 36px;}
+.compare-col h4{font-size:10px;letter-spacing:.25em;text-transform:uppercase;font-weight:700;margin-bottom:26px;}
+.compare-old h4{color:#999;}
+.compare-new h4{color:var(--t-rose);}
+.compare-col ul{list-style:none;}
+.compare-col ul li{font-size:12px;padding:7px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;align-items:center;gap:12px;color:#444;line-height:1.5;}
+.compare-old ul li{color:#999;}
+.x{color:#cc5555;font-size:14px;flex-shrink:0;}
+.check{color:#4a8c5c;font-size:14px;flex-shrink:0;font-weight:700;}
+.compare-divider{background:rgba(0,0,0,.08);}
 
-/* ── MEN'S HEALTH ── */
-.mens { background: var(--iw-black); padding: 120px 72px; position: relative; overflow: hidden; }
-.mens::before {
-  content: '';
-  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-  background: radial-gradient(ellipse at 80% 40%, rgba(22,33,24,0.55) 0%, transparent 55%);
-  pointer-events: none;
-}
-.mens-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center; position: relative; z-index: 2; }
-.mens-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(44px, 6.5vw, 88px); font-weight: 400;
-  letter-spacing: 0.06em; line-height: 1.04;
-  color: var(--iw-white); margin-bottom: 22px;
-}
-.mens-sub {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 21px; font-weight: 300; line-height: 1.55;
-  color: rgba(106,138,112,0.85); margin-bottom: 32px;
-}
-.mens-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 13px; font-weight: 300; line-height: 2;
-  color: rgba(245,245,243,0.36); max-width: 420px; margin-bottom: 44px;
-}
-.mens-metrics { display: flex; flex-direction: column; gap: 2px; }
-.mens-metric {
-  display: flex; align-items: center; gap: 24px;
-  padding: 24px 28px; background: rgba(255,255,255,0.02);
-  border-left: 3px solid var(--iw-sage);
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-.mens-metric:hover { background: rgba(30,46,32,0.4); border-left-color: var(--iw-sage-light); }
-.mens-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 33px; font-weight: 300;
-  color: rgba(106,138,112,0.82); flex-shrink: 0; width: 76px; line-height: 1;
-}
-.mens-title {
-  font-size: 8.5px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--iw-white); display: block; margin-bottom: 5px;
-}
-.mens-desc {
-  font-family: 'Raleway', sans-serif;
-  font-size: 11px; font-weight: 300; line-height: 1.6;
-  color: rgba(245,245,243,0.33);
-}
+/* ══════════════════════════════
+   INNATE ADVANTAGE
+══════════════════════════════ */
+.advantage-bg{background:var(--i-mid);border-top:1px solid var(--i-border);}
+.advantage-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--i-border);max-width:1000px;margin:0 auto 40px;}
+.advantage-card{background:var(--i-black);padding:52px 48px;}
+.advantage-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;}
+.advantage-card-top i{font-size:34px;color:rgba(247,243,238,.45);}
+.adv-tag{font-size:8.5px;letter-spacing:.28em;color:rgba(247,243,238,.38);text-transform:uppercase;border:1px solid rgba(247,243,238,.14);padding:5px 12px;}
+.advantage-card h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#fff;line-height:1.2;margin-bottom:18px;}
+.adv-divider{width:36px;height:1px;background:rgba(247,243,238,.18);margin-bottom:18px;}
+.advantage-card p{font-size:12.5px;color:rgba(247,243,238,.44);line-height:2;margin-bottom:26px;}
+.adv-list{list-style:none;}
+.adv-list li{font-size:11px;color:rgba(247,243,238,.38);padding:8px 0;border-bottom:1px solid var(--i-border);display:flex;align-items:center;gap:10px;letter-spacing:.04em;}
+.adv-list li::before{content:"—";color:var(--i-sage-light);flex-shrink:0;}
+.advantage-note{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;font-weight:300;color:rgba(247,243,238,.28);max-width:700px;margin:0 auto;line-height:1.8;}
 
-/* ── MEMBERSHIP ── */
-.membership { background: var(--iw-charcoal); padding: 120px 72px; }
-.mem-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
-.mem-card { padding: 52px 40px; display: flex; flex-direction: column; gap: 24px; }
-.mc-featured {
-  background: rgba(30,46,32,0.42);
-  border-top: 2px solid var(--iw-sage);
-  position: relative;
-}
-.mc-featured::before {
-  content: 'MOST POPULAR';
-  position: absolute; top: -1px; right: 40px;
-  background: var(--iw-sage); padding: 5px 14px;
-  font-size: 7px; font-weight: 700; letter-spacing: 0.3em;
-  color: var(--iw-white);
-}
-.mc-standard { background: rgba(255,255,255,0.022); border-top: 1px solid rgba(58,80,64,0.22); }
-.mc-light    { background: rgba(255,255,255,0.014); border-top: 1px solid rgba(58,80,64,0.13); }
-.mem-tier {
-  font-size: 7.5px; font-weight: 700; letter-spacing: 0.42em; text-transform: uppercase;
-  color: var(--iw-sage-light);
-}
-.mem-name {
-  font-family: 'Cinzel', serif;
-  font-size: 21px; font-weight: 400; letter-spacing: 0.08em; line-height: 1.3;
-  color: var(--iw-white);
-}
-.mem-price {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 58px; font-weight: 300;
-  color: rgba(106,138,112,0.88); line-height: 1;
-}
-.mem-price sup { font-size: 24px; vertical-align: super; }
-.mem-price sub {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px; font-weight: 300; letter-spacing: 0.2em;
-  color: rgba(106,138,112,0.4);
-}
-.mem-feats { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.mem-feats li {
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px; font-weight: 300; line-height: 1.55;
-  color: rgba(245,245,243,0.48); padding-left: 18px; position: relative;
-}
-.mem-feats li::before { content: '—'; position: absolute; left: 0; color: var(--iw-sage); font-size: 10px; }
-.mem-cta {
-  display: inline-block; margin-top: auto;
-  font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--iw-sage-light); border: 1px solid rgba(58,80,64,0.45);
-  padding: 13px 28px; text-decoration: none; width: fit-content;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-.mem-cta:hover { background: var(--iw-sage); color: var(--iw-white); border-color: var(--iw-sage); }
-.mc-featured .mem-cta { background: var(--iw-sage); color: var(--iw-white); border-color: var(--iw-sage); }
-.mc-featured .mem-cta:hover { background: var(--iw-forest-mid); border-color: var(--iw-sage-light); }
+/* ══════════════════════════════
+   PHILOSOPHY
+══════════════════════════════ */
+.phil-bg{background:var(--i-green);}
+.phil-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3.2vw,38px);font-weight:300;font-style:italic;color:var(--i-white);line-height:1.6;max-width:800px;margin:0 auto 60px;text-align:center;}
+.phil-quote em{color:var(--i-sage-light);font-style:normal;}
+.phil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--i-border);}
+.phil-card{background:rgba(11,28,20,.6);padding:48px 40px;}
+.phil-card-label{font-size:9px;letter-spacing:.34em;color:rgba(247,243,238,.35);text-transform:uppercase;margin-bottom:18px;}
+.phil-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--i-white);line-height:1.3;margin-bottom:14px;}
+.phil-card p{font-size:12px;color:rgba(247,243,238,.4);line-height:2;}
 
-/* ── PROCESS ── */
-.process { background: var(--iw-forest); padding: 120px 72px; position: relative; overflow: hidden; }
-.process-steps {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  position: relative; margin-top: 80px;
-}
-.process-steps::before {
-  content: ''; position: absolute; top: 32px; left: 10%; right: 10%; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(58,80,64,0.4), rgba(58,80,64,0.4), transparent);
-}
-.process-step { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 0 16px; text-align: center; }
-.step-num {
-  width: 64px; height: 64px; border: 1.5px solid var(--iw-sage);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 24px; font-weight: 300; color: rgba(106,138,112,0.85);
-  background: var(--iw-forest); position: relative; z-index: 2;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
-.process-step:hover .step-num { background: var(--iw-forest-mid); border-color: var(--iw-sage-light); }
-.step-title { font-size: 8.5px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--iw-white); }
-.step-desc { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-style: italic; color: rgba(245,245,243,0.4); line-height: 1.65; }
+/* ══════════════════════════════
+   MEMBERSHIP
+══════════════════════════════ */
+.mem-bg{background:var(--i-black);}
+.mem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--i-border);margin-top:56px;}
+.mem-card{background:var(--i-black);padding:48px 36px;position:relative;}
+.mem-card.featured{background:var(--i-green);}
+.mem-badge{font-size:8.5px;letter-spacing:.3em;color:var(--i-sage-light);text-transform:uppercase;font-weight:600;margin-bottom:22px;display:block;}
+.mem-card h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--i-white);margin-bottom:8px;}
+.tier-desc{font-size:11px;color:var(--i-muted);line-height:1.8;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--i-border);}
+.tier-consult{font-size:11px;color:rgba(247,243,238,.28);font-style:italic;margin-bottom:18px;line-height:1.6;}
+.tier-divider{width:100%;height:1px;background:var(--i-border);margin:18px 0;}
+.tier-section-label{font-size:8.5px;letter-spacing:.28em;color:rgba(247,243,238,.28);text-transform:uppercase;font-weight:600;margin:14px 0 8px;}
+.mem-feats{list-style:none;margin-bottom:32px;}
+.mem-feats li{font-size:11px;color:var(--i-muted);padding:7px 0;border-bottom:1px solid var(--i-border);display:flex;align-items:center;gap:10px;line-height:1.55;}
+.mem-feats li::before{content:'—';color:var(--i-sage-line);flex-shrink:0;}
+.tier-highlight{background:rgba(247,243,238,.04);border-left:2px solid rgba(247,243,238,.18);padding:14px 16px;font-size:11.5px;color:rgba(247,243,238,.42);line-height:1.8;font-style:italic;margin:18px 0;}
+.mem-cta{display:inline-block;font-size:9px;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;padding:12px 26px;font-weight:600;transition:all .2s;}
+.mem-card:not(.featured) .mem-cta{border:0.5px solid var(--i-sage-line);color:rgba(247,243,238,.55);}
+.mem-card:not(.featured) .mem-cta:hover{background:var(--i-sage);color:var(--i-white);border-color:var(--i-sage);}
+.mem-card.featured .mem-cta{background:var(--i-white);color:var(--i-black);}
+.mem-card.featured .mem-cta:hover{opacity:.85;}
 
-/* ── MILITARY / SPECIAL RATES ── */
-.special { background: var(--iw-forest-mid); padding: 80px 72px; border-top: 1px solid rgba(58,80,64,0.25); border-bottom: 1px solid rgba(58,80,64,0.25); }
-.special-inner { display: flex; align-items: center; gap: 80px; max-width: 1400px; margin: 0 auto; }
-.special-icon { font-size: 52px; opacity: 0.55; flex-shrink: 0; }
-.special-content { flex: 1; }
-.special-tag {
-  font-size: 7.5px; font-weight: 700; letter-spacing: 0.45em; text-transform: uppercase;
-  color: var(--iw-sage-light); margin-bottom: 12px; display: block;
-}
-.special-h {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(22px, 3vw, 36px); font-weight: 400; letter-spacing: 0.07em;
-  color: var(--iw-white); margin-bottom: 12px;
-}
-.special-b {
-  font-family: 'Raleway', sans-serif;
-  font-size: 13px; font-weight: 300; line-height: 1.85;
-  color: rgba(245,245,243,0.42); max-width: 560px;
-}
+/* ══════════════════════════════
+   HOW IT WORKS
+══════════════════════════════ */
+.how-bg{background:var(--i-mid);}
+.how-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative;}
+.how-steps::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:1px;background:var(--i-border);}
+.how-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;}
+.step-num{width:64px;height:64px;border:1px solid var(--i-border);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--i-muted);margin-bottom:22px;background:var(--i-mid);position:relative;z-index:1;transition:border-color .25s;}
+.how-step:hover .step-num{border-color:var(--i-sage-light);}
+.step-title{font-size:9.5px;letter-spacing:.26em;color:var(--i-sage-light);text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.step-desc{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:rgba(247,243,238,.38);line-height:1.7;}
+.vo2-callout{margin-top:64px;border:1px solid rgba(247,243,238,.07);padding:34px 48px;display:flex;align-items:center;gap:36px;background:rgba(247,243,238,.025);max-width:900px;margin-left:auto;margin-right:auto;margin-top:64px;}
+.vo2-callout i{font-size:30px;color:rgba(247,243,238,.45);flex-shrink:0;}
+.vo2-callout h4{font-size:9.5px;letter-spacing:.3em;color:var(--i-sage-light);text-transform:uppercase;font-weight:600;margin-bottom:7px;}
+.vo2-callout p{font-size:12px;color:var(--i-muted);line-height:1.9;}
 
-/* ── CTA BANNER ── */
-.cta-banner {
-  background: var(--iw-black); padding: 128px 72px; text-align: center;
-  position: relative; overflow: hidden;
+/* ══════════════════════════════
+   MILITARY
+══════════════════════════════ */
+.military{background:var(--i-black);border-top:1px solid var(--i-border);border-bottom:1px solid var(--i-border);display:flex;align-items:center;justify-content:space-between;gap:40px;padding:80px 60px;}
+.military-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.8vw,46px);font-weight:300;color:var(--i-white);line-height:1.2;margin-bottom:14px;}
+.military-content p{font-size:12px;color:var(--i-muted);line-height:2;max-width:540px;}
+.military-story{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;font-weight:300;color:rgba(247,243,238,.28);margin-top:20px;padding-top:20px;border-top:1px solid var(--i-border);line-height:1.7;display:flex;align-items:center;gap:12px;max-width:500px;}
+.military-story i{font-size:18px;color:var(--i-sage-light);flex-shrink:0;}
+
+/* ══════════════════════════════════════════════════════════════
+   ═══ TAILORED BY INNATE ═══
+══════════════════════════════════════════════════════════════ */
+
+/* ── TAILORED HERO (HERO 2) ── */
+.hero-tailored{
+  background:var(--t-ink);
+  padding:0;
+  position:relative;overflow:hidden;
+  border-top:3px solid var(--t-rose);
 }
-.cta-banner::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(58,80,64,0.5), transparent);
+.ht-eyebrow-bar{
+  background:var(--t-rose-faint);border-bottom:1px solid rgba(184,148,144,.15);
+  padding:12px 60px;
+  display:flex;align-items:center;justify-content:center;gap:20px;
 }
-.cta-eyebrow {
-  font-size: 8.5px; letter-spacing: 0.52em; text-transform: uppercase;
-  color: rgba(58,80,64,0.55); margin-bottom: 44px;
+.ht-eyebrow-bar span{font-size:9px;letter-spacing:.42em;text-transform:uppercase;color:rgba(184,148,144,.6);}
+.ht-eyebrow-bar::before,.ht-eyebrow-bar::after{content:'';flex:1;height:1px;background:rgba(184,148,144,.2);}
+.hero-tailored-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:90vh;
 }
-.cta-heading {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: clamp(42px, 6.5vw, 84px); font-weight: 300; line-height: 1.22;
-  color: var(--iw-white); max-width: 780px; margin: 0 auto 48px;
+.ht-left{
+  padding:96px 60px 80px 80px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--t-ink);
+  position:relative;overflow:hidden;
 }
-.cta-heading em { color: var(--iw-sage-light); font-style: normal; }
-.cta-sub {
-  font-size: 9.5px; font-weight: 300; letter-spacing: 0.36em; text-transform: uppercase;
-  color: rgba(245,245,243,0.22); margin-bottom: 60px; line-height: 2.4;
+.ht-left::before{content:'';position:absolute;top:0;right:0;bottom:0;width:1px;background:rgba(184,148,144,.12);}
+.ht-pre{font-size:9.5px;letter-spacing:.48em;text-transform:uppercase;color:rgba(184,148,144,.5);margin-bottom:28px;display:flex;align-items:center;gap:14px;}
+.ht-pre::before{content:'';width:22px;height:1px;background:rgba(184,148,144,.4);}
+.ht-headline{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:clamp(64px,6.5vw,88px);line-height:1.05;color:var(--t-cream);margin-bottom:0;}
+.ht-headline-italic{font-family:'Cormorant Garamond',serif;font-weight:200;font-style:italic;font-size:clamp(64px,6.5vw,88px);line-height:1.05;color:var(--t-rose);margin-bottom:28px;}
+.ht-sub{font-size:14px;line-height:1.9;color:rgba(250,247,242,.5);max-width:440px;margin-bottom:40px;font-weight:300;}
+.ht-ctas{display:flex;align-items:center;gap:18px;margin-bottom:44px;}
+.btn-t-primary{display:inline-block;font-size:9.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--t-ink);background:var(--t-rose);padding:15px 36px;text-decoration:none;transition:opacity .2s;}
+.btn-t-primary:hover{opacity:.85;}
+.btn-t-ghost{display:inline-block;font-size:9.5px;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,247,242,.45);text-decoration:none;transition:color .2s;}
+.btn-t-ghost:hover{color:var(--t-rose);}
+.ht-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.ht-pills span{font-size:8.5px;letter-spacing:.22em;color:rgba(184,148,144,.55);text-transform:uppercase;border:1px solid rgba(184,148,144,.18);padding:6px 14px;}
+.ht-right{
+  background:var(--t-ivory);
+  padding:80px 60px;
+  display:flex;flex-direction:column;justify-content:center;gap:2px;
 }
-.cta-actions { display: flex; align-items: center; justify-content: center; gap: 28px; }
+.ht-stat-card{background:var(--t-cream);border:1px solid var(--t-line);padding:32px 36px;}
+.ht-stat-card:hover{background:rgba(184,148,144,.06);}
+.hsc-label{font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--t-rose);margin-bottom:8px;font-weight:500;}
+.hsc-val{font-family:'Cormorant Garamond',serif;font-weight:200;font-style:italic;font-size:38px;color:var(--t-ink);line-height:1;margin-bottom:6px;}
+.hsc-note{font-size:11px;line-height:1.8;color:var(--t-taupe);}
+.ht-note-card{background:rgba(184,148,144,.06);border:1px solid rgba(184,148,144,.14);padding:20px 28px;margin-top:4px;display:flex;align-items:center;gap:14px;}
+.ht-note-card i{font-size:14px;color:var(--t-rose);flex-shrink:0;}
+.ht-note-card p{font-size:11px;color:rgba(250,247,242,.45);line-height:1.75;}
+
+/* ── TAILORED TRUST BAR ── */
+.t-trust{display:grid;grid-template-columns:repeat(4,1fr);background:var(--t-cream);border-bottom:1px solid var(--t-line);}
+.t-trust-item{padding:28px 32px;border-right:1px solid var(--t-line);text-align:center;}
+.t-trust-item:last-child{border-right:none;}
+.tti-val{font-family:'Cormorant Garamond',serif;font-weight:200;font-style:italic;font-size:32px;color:var(--t-rose);margin-bottom:5px;display:block;}
+.tti-label{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--t-rose);margin-bottom:4px;display:block;font-weight:500;}
+.tti-note{font-size:11px;color:var(--t-taupe);line-height:1.65;}
+
+/* ── TAILORED TICKER ── */
+.t-ticker{overflow:hidden;border-top:1px solid var(--t-line);border-bottom:1px solid var(--t-line);padding:11px 0;background:var(--t-ivory);}
+.t-ticker-inner{display:flex;gap:40px;animation:ticker 28s linear infinite;white-space:nowrap;width:max-content;}
+.t-ticker-item{font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--t-rose);flex-shrink:0;opacity:.65;}
+
+/* ── TAILORED DRIP MENU ── */
+.t-section{background:var(--t-cream);padding:100px 80px;}
+.t-section-label{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--t-warm);display:flex;align-items:center;gap:18px;margin-bottom:48px;}
+.t-section-label::after{content:'';flex:1;height:1px;background:var(--t-line);}
+.t-section-h{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:clamp(34px,4.5vw,54px);line-height:1.15;color:var(--t-ink);margin-bottom:12px;}
+.t-section-h em{font-style:italic;color:var(--t-rose);}
+.t-section-sub{font-size:12px;line-height:2;color:var(--t-taupe);max-width:500px;margin-bottom:56px;}
+.drip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--t-line);}
+.drip-card{background:var(--t-cream);padding:38px 34px;transition:background .2s;border:1px solid var(--t-line);}
+.drip-card:hover{background:var(--t-ivory);}
+.dc-tag{font-size:8px;letter-spacing:.34em;text-transform:uppercase;color:var(--t-rose);margin-bottom:13px;display:inline-block;border-bottom:1px solid rgba(184,148,144,.3);padding-bottom:3px;}
+.dc-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;color:var(--t-ink);margin-bottom:9px;line-height:1.15;}
+.dc-ingredients{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,148,144,.8);margin-bottom:12px;font-weight:400;}
+.dc-copy{font-size:11.5px;line-height:1.9;color:var(--t-taupe);margin-bottom:16px;}
+.dc-book{display:inline-block;margin-top:16px;font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--t-ink);text-decoration:none;border-bottom:1px solid var(--t-rose);padding-bottom:2px;transition:color .2s;}
+.dc-book:hover{color:var(--t-rose);}
+
+/* ── ADD-ONS ── */
+.t-addons{background:var(--t-ivory);padding:72px 80px;border-top:1px solid var(--t-line);}
+.ao-title{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:34px;color:var(--t-ink);margin-bottom:8px;}
+.ao-sub{font-size:11px;color:var(--t-taupe);line-height:1.9;margin-bottom:32px;}
+.ao-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--t-line);}
+.ao-item{background:var(--t-ivory);padding:24px 26px;}
+.ao-name{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--t-ink);font-weight:500;margin-bottom:6px;}
+.ao-note{font-size:10.5px;color:var(--t-taupe);line-height:1.7;margin-bottom:9px;}
+.ao-price{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--t-rose);}
+
+/* ── EVENTS ── */
+.t-events{background:var(--t-cream);padding:100px 80px;}
+.event-cards{display:flex;flex-direction:column;gap:2px;}
+.ecard{display:grid;grid-template-columns:80px 1fr auto;align-items:center;padding:40px 48px;background:var(--t-cream);border:1px solid var(--t-line);transition:background .2s;gap:36px;}
+.ecard:hover{background:var(--t-ivory);}
+.ec-num{font-family:'Cormorant Garamond',serif;font-weight:200;font-style:italic;font-size:56px;color:rgba(184,148,144,.18);line-height:1;}
+.ec-tag{font-size:8px;letter-spacing:.36em;text-transform:uppercase;color:var(--t-rose);margin-bottom:8px;display:block;}
+.ec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:26px;color:var(--t-ink);margin-bottom:8px;line-height:1.2;}
+.ec-copy{font-size:11.5px;line-height:1.9;color:var(--t-taupe);}
+.ec-link{font-size:8.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--t-rose);text-decoration:none;border-bottom:1px solid rgba(184,148,144,.3);padding-bottom:2px;white-space:nowrap;}
+
+/* ── FITNESS / ATHLETES ── */
+.t-fitness{background:var(--t-ivory);padding:100px 80px;}
+.t-fitness-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:80px;align-items:start;}
+.fit-h{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:clamp(34px,4vw,50px);line-height:1.1;color:var(--t-ink);margin-bottom:18px;}
+.fit-h em{font-style:italic;color:var(--t-rose);}
+.fit-copy{font-size:12px;line-height:2;color:var(--t-taupe);margin-bottom:36px;}
+.fit-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.fit-list li{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--t-line);font-size:11.5px;color:var(--t-taupe);letter-spacing:.06em;}
+.fit-list li:first-child{border-top:1px solid var(--t-line);}
+.fit-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--t-rose);flex-shrink:0;}
+.fit-stats{display:flex;flex-direction:column;gap:2px;}
+.fit-stat{background:var(--t-cream);border:1px solid var(--t-line);padding:32px 36px;}
+.fs-big{font-family:'Cormorant Garamond',serif;font-weight:200;font-style:italic;font-size:48px;color:var(--t-rose);line-height:1;margin-bottom:7px;}
+.fs-note{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--t-warm);}
+
+/* ── BOOKING ── */
+.t-booking{background:var(--t-cream);padding:100px 80px;}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;}
+.book-h{font-family:'Cormorant Garamond',serif;font-weight:200;font-size:clamp(30px,3.8vw,48px);line-height:1.15;color:var(--t-ink);margin-bottom:18px;}
+.book-h em{font-style:italic;color:var(--t-rose);}
+.book-copy{font-size:12px;line-height:2;color:var(--t-taupe);margin-bottom:32px;}
+.book-step{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--t-line);}
+.bs-num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:200;color:var(--t-rose-mid);flex-shrink:0;line-height:1;width:30px;}
+.bs-title{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--t-ink);font-weight:500;margin-bottom:5px;}
+.bs-copy{font-size:11px;line-height:1.8;color:var(--t-taupe);}
+.book-form{display:flex;flex-direction:column;gap:12px;}
+.fl{font-size:8px;letter-spacing:.32em;text-transform:uppercase;color:var(--t-warm);font-weight:500;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+input.fi-l,select.fs-l,textarea.ft-l{background:white;border:1px solid var(--t-line);color:var(--t-ink);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:300;padding:12px 14px;outline:none;width:100%;transition:border .2s;appearance:none;}
+input.fi-l::placeholder{color:rgba(107,95,87,.3);}
+input.fi-l:focus,select.fs-l:focus,textarea.ft-l:focus{border-color:var(--t-rose);}
+select.fs-l{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(107,95,87,.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:white;cursor:pointer;}
+textarea.ft-l{resize:vertical;min-height:100px;line-height:1.8;}
+.fsub-l{width:100%;background:var(--t-ink);color:var(--t-cream);border:none;padding:15px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;cursor:pointer;transition:opacity .2s;}
+.fsub-l:hover{opacity:.85;}
+.form-note-l{font-size:9px;color:var(--t-warm);text-align:center;line-height:1.8;}
+
+/* ── INNATE LINK BAND ── */
+.innate-link-band{background:var(--t-ivory);border-top:1px solid var(--t-line);padding:72px 80px;display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.ilb-eye{font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--t-rose);margin-bottom:12px;font-weight:600;}
+.ilb-h{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:34px;color:var(--t-ink);line-height:1.2;margin-bottom:12px;}
+.ilb-copy{font-size:12.5px;line-height:1.95;color:var(--t-ink);opacity:.6;max-width:480px;}
+.btn-t-outline{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--t-ink);border:1px solid var(--t-sand);padding:14px 32px;text-decoration:none;white-space:nowrap;transition:all .2s;font-weight:500;display:inline-block;}
+.btn-t-outline:hover{border-color:var(--t-rose);color:var(--t-rose);}
 
 /* ── FOOTER ── */
-footer { background: var(--iw-charcoal); border-top: 1px solid var(--iw-line); padding: 64px 72px 48px; }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 64px; max-width: 1400px; margin: 0 auto; }
-.footer-logo { height: 30px; filter: invert(1); display: block; margin-bottom: 20px; }
-.footer-tagline {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 14px; font-weight: 300; color: rgba(245,245,243,0.28);
-  line-height: 1.7; max-width: 200px;
-}
-.footer-col-title {
-  font-size: 7.5px; font-weight: 700; letter-spacing: 0.42em; text-transform: uppercase;
-  color: var(--iw-sage-light); margin-bottom: 20px; display: block;
-}
-.footer-links { display: flex; flex-direction: column; gap: 11px; }
-.footer-link {
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px; font-weight: 300; color: rgba(245,245,243,0.33);
-  text-decoration: none; transition: color 0.2s ease;
-}
-.footer-link:hover { color: var(--iw-white); }
-.footer-bottom {
-  max-width: 1400px; margin: 48px auto 0; padding-top: 24px;
-  border-top: 1px solid var(--iw-line);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.footer-copy { font-size: 8.5px; font-weight: 300; letter-spacing: 0.2em; color: rgba(245,245,243,0.16); }
+footer{background:#0b0a0b;padding:60px 80px 28px;border-top:1px solid rgba(184,148,144,.07);}
+.ft-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:52px;margin-bottom:44px;}
+.fb-logos{display:flex;flex-direction:column;gap:24px;margin-bottom:16px;}
+.fb-logo-innate img{height:22px;width:auto;filter:invert(1);opacity:.6;}
+.fb-logo-tailored{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:rgba(184,148,144,.35);font-style:italic;}
+.fb-copy{font-size:11px;line-height:1.95;color:rgba(250,247,242,.22);max-width:260px;}
+.fb-contact{font-size:11px;line-height:2.2;color:rgba(250,247,242,.22);margin-top:12px;}
+.fb-contact a{color:rgba(184,148,144,.45);text-decoration:none;}
+.fc-head{font-size:8.5px;letter-spacing:.36em;text-transform:uppercase;color:rgba(184,148,144,.45);font-weight:500;margin-bottom:16px;}
+.fc-links{list-style:none;}
+.fc-links li{margin-bottom:9px;}
+.fc-links a{font-size:11px;color:rgba(250,247,242,.25);text-decoration:none;transition:color .2s;}
+.fc-links a:hover{color:rgba(184,148,144,.7);}
+.ft-bottom{border-top:1px solid rgba(250,247,242,.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;}
+.ft-copy-sm{font-size:8.5px;letter-spacing:.12em;color:rgba(184,148,144,.22);}
 
-/* ── HERO SHAPES (ElegantShape port) ── */
-/* Frosted-glass pill shapes that float in the hero background.
-   Web Animations API drives the entrance; CSS @keyframes the infinite float. */
-.hs-pill {
-  position: absolute; inset: 0;
-  border-radius: 9999px;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1.5px solid rgba(106,138,112,0.18);
-  box-shadow: 0 8px 32px rgba(58,80,64,0.10), inset 0 1px 0 rgba(106,138,112,0.08);
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media(max-width:1280px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-card:nth-child(4n){border-right:1px solid var(--i-border);}
+  .svc-card:nth-child(2n){border-right:none;}
+  .drip-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(3,1fr);}
 }
-.hs-pill::after {
-  content: '';
-  position: absolute; inset: 0; border-radius: 9999px;
-  background: radial-gradient(circle at 50% 50%, rgba(106,138,112,0.14), transparent 70%);
+@media(max-width:1024px){
+  .hero-bottom{flex-direction:column;align-items:flex-start;gap:32px;}
+  .hb-right{align-items:flex-start;}
+  .hero-tailored-inner{grid-template-columns:1fr;}
+  .ht-right{padding:48px 60px;}
+  .t-fitness-inner{grid-template-columns:1fr;gap:48px;}
+  .book-grid{grid-template-columns:1fr;gap:48px;}
+  .innate-link-band{flex-direction:column;gap:24px;}
+  .advantage-grid{grid-template-columns:1fr;}
+  .mem-grid{grid-template-columns:1fr;}
+  .phil-grid{grid-template-columns:1fr;}
+  nav{padding:18px 32px;}
+  .top-bar{padding:9px 32px;}
 }
-@keyframes hsFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(15px); }
-}
-
-/* ── SCROLL ANIMATIONS ── */
-.fade-up { transition: opacity 0.65s ease, transform 0.65s ease; }
-.js-ready .fade-up { opacity: 0; transform: translateY(28px); }
-.js-ready .fade-up.in { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.1s; }
-.d2 { transition-delay: 0.2s; }
-.d3 { transition-delay: 0.3s; }
-.d4 { transition-delay: 0.4s; }
-
-/* ── IV THERAPY (TAILORED BY INNATE) ── */
-.iv-therapy {
-  background: #f2ece0;
-  padding: 120px 72px;
-  position: relative; overflow: hidden;
-}
-.iv-therapy::before {
-  content: 'IV';
-  position: absolute; font-family: 'Cinzel', serif; font-size: 420px; font-weight: 600;
-  color: rgba(58,80,64,0.04); top: 50%; left: 50%;
-  transform: translate(-50%,-50%); white-space: nowrap; letter-spacing: 0.15em; pointer-events: none;
-}
-.iv-section-tag {
-  font-size: 7.5px; font-weight: 600; letter-spacing: 0.52em; text-transform: uppercase;
-  color: rgba(58,80,64,0.6);
-  display: flex; align-items: center; gap: 20px; margin-bottom: 60px;
-}
-.iv-section-tag::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(58,80,64,0.25), transparent); }
-.iv-section-tag .sec-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; font-weight: 300; color: #3a5040; }
-.iv-header { display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: end; margin-bottom: 72px; }
-.iv-heading {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(30px, 3.8vw, 52px); font-weight: 400; letter-spacing: 0.04em; line-height: 1.18;
-  color: #162118; margin-bottom: 14px;
-}
-.iv-sub {
-  font-family: 'Raleway', sans-serif;
-  font-size: 13px; font-weight: 300; line-height: 1.9;
-  color: rgba(22,33,24,0.52); max-width: 480px;
-}
-.iv-eyebrow {
-  font-size: 8.5px; font-weight: 500; letter-spacing: 0.45em; text-transform: uppercase;
-  color: #3a5040; margin-bottom: 14px;
-  display: flex; align-items: center; gap: 16px;
-}
-.iv-eyebrow::before { content: ''; width: 36px; height: 1px; background: rgba(58,80,64,0.4); }
-.iv-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
-.iv-card {
-  padding: 32px 24px 36px;
-  background: #ede8dc;
-  border-top: 1px solid rgba(58,80,64,0.16);
-  display: flex; flex-direction: column; gap: 12px;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-  position: relative;
-}
-.iv-card:hover {
-  background: #e6dfd1;
-  border-top-color: #3a5040;
-  transform: translateY(-3px);
-}
-.iv-card-icon { font-size: 16px; opacity: 0.6; transition: opacity 0.25s ease; }
-.iv-card:hover .iv-card-icon { opacity: 1; }
-.iv-card-name {
-  font-size: 8.5px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase;
-  color: #162118;
-}
-.iv-card-tagline {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 13px; font-weight: 400; color: rgba(58,80,64,0.8); line-height: 1.4;
-}
-.iv-card-ingredients {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(22,33,24,0.35); padding-top: 6px;
-  border-top: 1px solid rgba(58,80,64,0.12);
-}
-.iv-card-desc {
-  font-family: 'Raleway', sans-serif;
-  font-size: 11.5px; font-weight: 300; line-height: 1.75;
-  color: rgba(22,33,24,0.5); flex: 1;
-}
-.iv-card-cta {
-  margin-top: 8px;
-  font-size: 8px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: #3a5040; text-decoration: none;
-  display: inline-flex; align-items: center; gap: 8px;
-  transition: gap 0.2s ease, color 0.2s ease;
-}
-.iv-card-cta:hover { color: #162118; gap: 14px; }
-.iv-banner {
-  margin-top: 56px; padding: 40px 48px;
-  background: rgba(58,80,64,0.08);
-  border: 1px solid rgba(58,80,64,0.18);
-  display: flex; align-items: center; justify-content: space-between; gap: 48px;
-}
-.iv-banner-text {
-  font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: clamp(18px, 2.2vw, 26px); font-weight: 300;
-  color: #162118; line-height: 1.5;
-}
-.iv-banner-text em { color: #3a5040; font-style: normal; }
-.btn-iv {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
-  color: #f2ece0; background: #3a5040; border: 1px solid #3a5040;
-  padding: 15px 36px; text-decoration: none; flex-shrink: 0;
-  transition: background 0.25s ease, border-color 0.25s ease;
-  display: inline-block;
-}
-.btn-iv:hover { background: #162118; border-color: #162118; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1280px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-steps { grid-template-columns: repeat(3, 1fr); gap: 48px; }
-  .process-steps::before { display: none; }
-  .iv-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 1024px) {
-  .hero { padding: 0 40px 64px; }
-  .hero-stats { display: none; }
-  .services { padding: 88px 40px; }
-  .philosophy { padding: 88px 40px; }
-  .mens { padding: 88px 40px; }
-  .mens-grid { grid-template-columns: 1fr; gap: 56px; }
-  .membership { padding: 88px 40px; }
-  .mem-grid { grid-template-columns: 1fr; }
-  .process { padding: 88px 40px; }
-  .iv-therapy { padding: 88px 40px; }
-  .iv-grid { grid-template-columns: repeat(2, 1fr); }
-  .iv-header { grid-template-columns: 1fr; }
-  .iv-banner { flex-direction: column; gap: 28px; }
-  .cta-banner { padding: 88px 40px; }
-  footer { padding: 56px 40px 40px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
-  #nav { padding: 0 40px; }
-}
-@media (max-width: 768px) {
-  .hero { padding: 0 24px 56px; }
-  .services { padding: 72px 24px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .services-header { grid-template-columns: 1fr; }
-  .philosophy { padding: 72px 24px; }
-  .phil-grid { grid-template-columns: 1fr; }
-  .mens { padding: 72px 24px; }
-  .membership { padding: 72px 24px; }
-  .process { padding: 72px 24px; }
-  .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .iv-therapy { padding: 72px 24px; }
-  .iv-grid { grid-template-columns: 1fr; }
-  .special { padding: 56px 24px; }
-  .special-inner { flex-direction: column; gap: 24px; }
-  .cta-banner { padding: 72px 24px; }
-  footer { padding: 48px 24px 32px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-  .nav-links { display: none; }
-  #nav { padding: 0 24px; }
+@media(max-width:768px){
+  .hero-innate,.i-section,.t-section,.t-addons,.t-events,.t-fitness,.t-booking,.innate-link-band{padding-left:28px;padding-right:28px;}
+  .ht-left{padding:72px 28px 56px;}
+  .ht-right{padding:48px 28px;}
+  .services-grid{grid-template-columns:1fr;}
+  .svc-card:nth-child(n){border-right:none;}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .compare-table{grid-template-columns:1fr;}
+  .compare-divider{display:none;}
+  .how-steps{grid-template-columns:1fr 1fr;gap:32px;}
+  .how-steps::before{display:none;}
+  .military{flex-direction:column;gap:28px;}
+  .t-trust{grid-template-columns:repeat(2,1fr);}
+  .ao-grid{grid-template-columns:repeat(2,1fr);}
+  .drip-grid{grid-template-columns:1fr;}
+  .ecard{grid-template-columns:1fr;gap:16px;}
+  .ec-num{display:none;}
+  .ft-grid{grid-template-columns:1fr;gap:36px;}
+  nav{padding:16px 24px;}
+  .nav-links{display:none;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#"><img src="brand_assests/Image.webp" alt="Innate Wellness" class="nav-logo"></a>
-  <div class="nav-links">
-    <a href="#about" class="nav-link">About</a>
-    <a href="#services" class="nav-link">Services</a>
-    <a href="#membership" class="nav-link">Membership</a>
-    <a href="#contact" class="nav-link">Contact</a>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="tb-left">The Innate Family · DFW, Texas</span>
+  <div class="tb-right">
+    <span class="tb-note">Last-minute appointments —</span>
+    <a href="tel:9036179061" class="tb-phone"><i class="ti ti-phone"></i> (903) 617-9061</a>
   </div>
-  <a href="https://www.innate-dfw.com/" class="nav-cta" target="_blank" rel="noopener">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#innate"><img src="brand_assests/Image.webp" alt="Innate Wellness" class="nav-logo" style="height:26px;"></a>
+  <ul class="nav-links">
+    <li><a href="#innate">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#membership">Membership</a></li>
+    <li><a href="#about">About</a></li>
+    <li class="nav-divider"></li>
+    <li><a href="#tailored" style="color:rgba(184,148,144,.55);">Tailored by Innate</a></li>
+    <li><a href="#drips" style="color:rgba(184,148,144,.45);">Drip Menu</a></li>
+    <li><a href="#events" style="color:rgba(184,148,144,.45);">Events</a></li>
+    <li><a href="#book" class="nav-cta">Book Now</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-grad-1"></div>
-  <div class="hero-grad-2"></div>
-  <div class="hero-noise"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">DFW &nbsp;·&nbsp; Functional Medicine &nbsp;·&nbsp; Optimization</div>
-    <h1 class="hero-heading">Your Biology,<br><em>Fully Optimized.</em></h1>
-    <p class="hero-sub">A private functional medicine practice for high-performing men and women who refuse to settle for standard care. Clinician-directed. Evidence-based. Built around you.</p>
-    <div class="hero-actions">
-      <a href="https://www.innate-dfw.com/" class="btn-primary" target="_blank" rel="noopener">Book a Consultation</a>
-      <a href="#services" class="btn-ghost">Explore Services <span>→</span></a>
-    </div>
+<!-- ═══════════════════════════════════════════
+     HERO 1 — INNATE WELLNESS
+═══════════════════════════════════════════ -->
+<section class="hero-innate" id="innate">
+  <div class="hi-grid"></div>
+  <div class="wordmark">
+    <span class="wm-the">the</span>
+    <h1 class="wm-innate">INNATE</h1>
+    <div class="wm-line"></div>
+    <span class="wm-family">Family</span>
   </div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="stat-n">100+</span>
-      <span class="stat-l">Bio Markers</span>
+  <div class="hero-bottom">
+    <div class="hb-left">
+      <h2 class="hero-headline">Elite Concierge<br><em>Healthcare.</em></h2>
+      <p class="hero-sub">A private concierge practice for high-performing men and women who refuse to settle for standard care. Clinician-directed. Evidence-based. Built around you.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn-i-primary">Book a Consultation</a>
+        <a href="#services" class="btn-i-ghost">Explore Services →</a>
+      </div>
     </div>
-    <div class="hero-stat">
-      <span class="stat-n">$199</span>
-      <span class="stat-l">Elite Membership / mo</span>
-    </div>
-    <div class="hero-stat">
-      <span class="stat-n">24/7</span>
-      <span class="stat-l">Provider Access</span>
+    <div class="hb-right">
+      <p class="hero-location"><i class="ti ti-map-pin"></i> Serving Dallas–Fort Worth</p>
+      <div class="hero-pills">
+        <span>Concierge Medicine</span>
+        <span>Peptide Therapy</span>
+        <span>Mobile IV Therapy</span>
+        <span>Hormone Optimization</span>
+        <span>Longevity</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Health Optimization</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Peptide Therapy</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Hormone Balance</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Longevity Strategies</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Biohacking Tools</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Medical Weight Loss</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">IV Therapy</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Corporate Wellness</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">TRT &amp; BHRT</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Nutrition Coaching</span><span class="marquee-dot">◆</span>
-    <!-- duplicate for seamless loop -->
-    <span class="marquee-item">Health Optimization</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Peptide Therapy</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Hormone Balance</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Longevity Strategies</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Biohacking Tools</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Medical Weight Loss</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">IV Therapy</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Corporate Wellness</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">TRT &amp; BHRT</span><span class="marquee-dot">◆</span>
-    <span class="marquee-item">Nutrition Coaching</span><span class="marquee-dot">◆</span>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item">Health Optimization</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Peptide Therapy</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Hormone Balance</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Longevity Strategies</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Biohacking Tools</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Medical Weight Loss</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">IV Therapy</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Corporate Wellness</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Concierge Primary Care</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Health Optimization</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Peptide Therapy</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Hormone Balance</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Longevity Strategies</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Biohacking Tools</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Medical Weight Loss</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">IV Therapy</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Corporate Wellness</span><span class="ticker-item">◆</span>
+    <span class="ticker-item">Concierge Primary Care</span><span class="ticker-item">◆</span>
   </div>
 </div>
 
 <!-- SERVICES -->
-<section class="services" id="services">
-  <div class="w">
-    <div class="sec-tag fade-up"><span class="sec-num">01</span> Services</div>
-    <div class="services-header">
-      <div>
-        <h2 class="section-heading fade-up">A Complete Ecosystem<br>of Optimization</h2>
-        <p class="section-sub fade-up d1">Every protocol is clinician-directed, evidence-based, and tailored to your biology — not a template, not a guess.</p>
-      </div>
-      <div>
-        <a href="https://www.innate-dfw.com/" class="btn-ghost fade-up" target="_blank" rel="noopener">All Services <span>→</span></a>
-      </div>
-    </div>
+<section class="i-section services-bg" id="services">
+  <div class="i-w">
+    <div class="sec-label-i">Services</div>
+    <h2 class="section-heading-i">A Complete Ecosystem<br>of <em>Optimization</em></h2>
+    <p class="section-sub-i">Every protocol is clinician-directed, evidence-based, and tailored to your biology — not a template, not a guess.</p>
     <div class="services-grid">
-      <div class="svc-card fade-up">
-        <div class="svc-icon">⚡</div>
-        <div class="svc-name">Health Optimization</div>
-        <div class="svc-desc">Personalized wellness plans integrating sleep, nutrition, exercise, and advanced therapies for sustained vitality.</div>
+      <div class="svc-card" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-home-heart"></i>
+        <h3>Concierge Medicine</h3>
+        <p>Your dedicated clinician. Available when you need them. Care delivered to your home, office, or wherever life takes you.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d1">
-        <div class="svc-icon">🧬</div>
-        <div class="svc-name">Peptide Therapy</div>
-        <div class="svc-desc">BPC-157, CJC-1295, Thymosin &amp; more — supporting tissue repair, anti-aging, and metabolic enhancement.</div>
+      <div class="svc-card" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-heart-rate-monitor"></i>
+        <h3>Functional Medicine & Health Optimization</h3>
+        <p>Personalized wellness plans integrating sleep, nutrition, exercise, and advanced therapies — built around your biology, not a template.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d2">
-        <div class="svc-icon">◈</div>
-        <div class="svc-name">Bio-Identical HRT &amp; TRT</div>
-        <div class="svc-desc">Customized hormone therapy for men and women — lab-guided, continuously monitored, personally managed.</div>
+      <div class="svc-card" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-flask"></i>
+        <h3>Hormone Optimization — Men & Women</h3>
+        <p>Bio-identical HRT for women and TRT for men. Perimenopause, menopause, testosterone optimization — lab-guided and continuously monitored.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d3">
-        <div class="svc-icon">◎</div>
-        <div class="svc-name">Longevity Strategies</div>
-        <div class="svc-desc">Cellular regeneration and sustained cognitive and physical performance designed for the long game.</div>
+      <div class="svc-card" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-dna"></i>
+        <h3>Peptide Therapy</h3>
+        <p>Targeted peptide protocols supporting tissue repair, anti-aging, body composition, and metabolic enhancement.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up">
-        <div class="svc-icon">◇</div>
-        <div class="svc-name">Biohacking Tools</div>
-        <div class="svc-desc">Science-backed technologies for cognitive enhancement, recovery acceleration, and anti-aging optimization.</div>
+      <div class="svc-card" onclick="document.getElementById('tailored').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-droplet"></i>
+        <h3>Mobile IV Therapy</h3>
+        <p>Clinician-administered nutrient infusions for hydration, immunity, energy, and recovery — delivered to your home, office, or wherever you are.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d1">
-        <div class="svc-icon">▣</div>
-        <div class="svc-name">Medical Weight Loss</div>
-        <div class="svc-desc">Custom protocols that prioritize lean muscle preservation over the number on the scale.</div>
+      <div class="svc-card" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-scale"></i>
+        <h3>Medical Weight Loss</h3>
+        <p>Muscle-preserving protocols that prioritize lean body composition over the number on the scale. No shortcuts.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d2">
-        <div class="svc-icon">💧</div>
-        <div class="svc-name">IV Therapy</div>
-        <div class="svc-desc">Nutrient infusions for hydration, immune support, energy replenishment, and performance recovery.</div>
+      <div class="svc-card" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
+        <i class="ti ti-lungs"></i>
+        <h3>Longevity & Metabolic Testing</h3>
+        <p>PNOē precision metabolic analysis and VO2 max testing — the gold standard for biological age, performance, and longevity planning.</p>
+        <span class="card-link">Learn more →</span>
       </div>
-      <div class="svc-card fade-up d3">
-        <div class="svc-icon">▲</div>
-        <div class="svc-name">Corporate Wellness</div>
-        <div class="svc-desc">Team-focused health assessments, biometric screenings, and lifestyle interventions for high-performing organizations.</div>
+      <div class="svc-card">
+        <i class="ti ti-building-skyscraper"></i>
+        <h3>Corporate Wellness</h3>
+        <p>Team-focused health assessments, biometric screenings, and lifestyle interventions for high-performing organizations.</p>
+        <span class="card-link">Learn more →</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- WHY INNATE -->
+<section class="i-section why-bg" style="padding:72px 60px;">
+  <div class="i-w">
+    <div class="why-top">
+      <p class="why-tag">The Innate Difference</p>
+      <h2 class="why-title">Because healthcare should adapt to your life —<br>not the other way around.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><i class="ti ti-home" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>We Come To You</h4><p>Mobile & in-office care — delivered where your life happens.</p></div>
+      <div class="why-card"><i class="ti ti-message-circle" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>Direct Provider Access</h4><p>A real clinician who knows your name, your labs, and your goals.</p></div>
+      <div class="why-card"><i class="ti ti-test-pipe" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>100+ Biomarker Panel</h4><p>Root cause clarity — not symptom guessing.</p></div>
+      <div class="why-card"><i class="ti ti-dna" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>Hormone & Peptide Optimization</h4><p>Precision therapy continuously monitored and adjusted to your biology.</p></div>
+      <div class="why-card"><i class="ti ti-droplet" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>Mobile IV Therapy</h4><p>Clinician-administered infusions delivered directly to your door.</p></div>
+      <div class="why-card"><i class="ti ti-scale" style="color:#a8906a;font-size:22px;display:block;margin-bottom:12px;"></i><h4>Muscle-First Weight Loss</h4><p>We protect lean muscle while optimizing fat loss — no shortcuts.</p></div>
+    </div>
+    <div class="compare-table">
+      <div class="compare-col compare-old">
+        <h4>Traditional Healthcare</h4>
+        <ul>
+          <li><span class="x">✕</span> Waiting rooms &amp; rushed appointments</li>
+          <li><span class="x">✕</span> Limited availability &amp; long wait times</li>
+          <li><span class="x">✕</span> Generic, one-size-fits-all protocols</li>
+          <li><span class="x">✕</span> Multiple office visits required</li>
+          <li><span class="x">✕</span> You adapt to their schedule</li>
+          <li><span class="x">✕</span> Symptom management, not optimization</li>
+        </ul>
+      </div>
+      <div class="compare-divider"></div>
+      <div class="compare-col compare-new">
+        <h4>Innate Wellness</h4>
+        <ul>
+          <li><span class="check">✓</span> We come to you — home, office, anywhere</li>
+          <li><span class="check">✓</span> Direct provider access — responsive, personal</li>
+          <li><span class="check">✓</span> Protocols built around your biology</li>
+          <li><span class="check">✓</span> Mobile care, telehealth &amp; in-person</li>
+          <li><span class="check">✓</span> Healthcare on your terms &amp; schedule</li>
+          <li><span class="check">✓</span> Full optimization — root cause &amp; beyond</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNATE ADVANTAGE -->
+<section class="i-section advantage-bg" id="about">
+  <div class="i-w">
+    <div style="text-align:center;margin-bottom:64px;">
+      <div class="sec-label-i" style="justify-content:center;">The Innate Advantage</div>
+      <h2 class="section-heading-i" style="text-align:center;">Most practices guess.<br><em>We measure.</em></h2>
+      <p style="text-align:center;font-size:13px;color:rgba(247,243,238,.44);max-width:600px;margin:0 auto;line-height:2;">Innate is one of the only DFW practices equipped with two exclusive clinical-grade diagnostic tools — the same technology used by elite athletes and performance labs.</p>
+    </div>
+    <div class="advantage-grid">
+      <div class="advantage-card">
+        <div class="advantage-card-top"><i class="ti ti-lungs"></i><span class="adv-tag">Exclusive</span></div>
+        <h3>PNOē Precision<br>Metabolic Analysis</h3>
+        <div class="adv-divider"></div>
+        <p>Clinical-grade breath analysis that decodes exactly how your body processes energy — revealing your true metabolic rate, fat-burning efficiency, cardiovascular fitness, and biological age. No estimates. No averages. Just your data.</p>
+        <ul class="adv-list">
+          <li>True resting metabolic rate</li>
+          <li>Fat vs. carbohydrate utilization</li>
+          <li>Biological age assessment</li>
+          <li>Personalized nutrition &amp; training zones</li>
+          <li>Included at intake for primary members</li>
+        </ul>
+      </div>
+      <div class="advantage-card">
+        <div class="advantage-card-top"><i class="ti ti-heartbeat"></i><span class="adv-tag">Exclusive</span></div>
+        <h3>VO2 Max Testing</h3>
+        <div class="adv-divider"></div>
+        <p>VO2 max is the single most powerful predictor of longevity and performance. Our clinician-supervised VO2 testing establishes your true cardiovascular ceiling — and gives us the data to push it higher, safely and precisely.</p>
+        <ul class="adv-list">
+          <li>Gold-standard cardiorespiratory assessment</li>
+          <li>True performance ceiling measurement</li>
+          <li>Longevity &amp; biological age correlation</li>
+          <li>Precision training zone programming</li>
+          <li>Available as standalone or within protocol</li>
+        </ul>
+      </div>
+    </div>
+    <p class="advantage-note">These diagnostic tools are rarely available outside of elite sports medicine facilities. At Innate, they're part of how we build your protocol from day one.</p>
   </div>
 </section>
 
 <!-- PHILOSOPHY -->
-<section class="philosophy" id="about">
-  <div class="w">
-    <div class="sec-tag fade-up" style="color:rgba(106,138,112,0.6);"><span class="sec-num">02</span> Philosophy</div>
-    <p class="phil-quote fade-up">"True health is not about waiting for illness — it's about <em>engineering vitality</em> from the inside out."</p>
+<section class="i-section phil-bg">
+  <div class="i-w">
+    <div class="sec-label-i" style="justify-content:center;color:rgba(106,138,112,.6);">Philosophy</div>
+    <p class="phil-quote">"True health is not about waiting for illness — it's about <em>building vitality</em> from the inside out."</p>
     <div class="phil-grid">
-      <div class="phil-card fade-up">
-        <div class="phil-tag">Our Mission</div>
-        <div class="phil-h">Optimization,<br>Not Symptom<br>Management.</div>
-        <div class="phil-b">Founded by a UT Southwestern-trained clinician, Innate Wellness exists to push beyond standard care — delivering functional medicine with the precision of elite sports science.</div>
+      <div class="phil-card">
+        <p class="phil-card-label">Our Mission</p>
+        <h3>Optimization, Not Symptom Management.</h3>
+        <p>Founded by a UT Southwestern-trained clinician, Innate Wellness exists to push beyond standard care — delivering functional medicine with the precision of elite sports science.</p>
       </div>
-      <div class="phil-card fade-up d1">
-        <div class="phil-tag">Our Approach</div>
-        <div class="phil-h">Built Around<br>Your Biology.</div>
-        <div class="phil-b">Every protocol starts with a comprehensive 100+ biomarker panel. No guesswork. No templates. Your numbers tell the story; our team writes the strategy.</div>
+      <div class="phil-card">
+        <p class="phil-card-label">Our Approach</p>
+        <h3>Built Around Your Biology.</h3>
+        <p>Every protocol starts with a comprehensive 100+ biomarker panel. No guesswork. No templates. Your numbers tell the story; our team writes the strategy.</p>
       </div>
-      <div class="phil-card fade-up d2">
-        <div class="phil-tag">Our Promise</div>
-        <div class="phil-h">A Partner in<br>Your Long<br>Game.</div>
-        <div class="phil-b">Unlike transactional clinics, we act as your concierge primary care provider — continuously monitoring, adjusting, and advocating for your health at every stage.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MEN'S HEALTH -->
-<section class="mens">
-  <div class="w">
-    <div class="sec-tag fade-up"><span class="sec-num">03</span> Men's Health</div>
-    <div class="mens-grid">
-      <div>
-        <h2 class="mens-heading fade-up">PEAK<br>PERFORMANCE<br>STARTS<br>HERE.</h2>
-        <p class="mens-sub fade-up">Clinician-directed TRT, peptide protocols &amp; hormone optimization — built around your bloodwork, not a template.</p>
-        <p class="mens-body fade-up">The DFW market is severely underserved in premium men's health. Innate Wellness pairs testosterone optimization with peptide therapy, metabolic health, and biohacking at a clinical level no local competitor offers.</p>
-        <a href="https://www.innate-dfw.com/" class="btn-primary fade-up" target="_blank" rel="noopener">Start Your Protocol</a>
-      </div>
-      <div class="mens-metrics">
-        <div class="mens-metric fade-up">
-          <div class="mens-val">TRT</div>
-          <div>
-            <span class="mens-title">Testosterone Replacement</span>
-            <span class="mens-desc">Traditional &amp; oral TRT options — lab-guided, continuously monitored, personally managed</span>
-          </div>
-        </div>
-        <div class="mens-metric fade-up d1">
-          <div class="mens-val">GH+</div>
-          <div>
-            <span class="mens-title">Growth Hormone Peptides</span>
-            <span class="mens-desc">CJC-1295/Ipamorelin, AOD-9604 for body composition, recovery &amp; performance</span>
-          </div>
-        </div>
-        <div class="mens-metric fade-up d2">
-          <div class="mens-val">BIO</div>
-          <div>
-            <span class="mens-title">Biological Age Analysis</span>
-            <span class="mens-desc">PNOe Precision resting metabolic rate — know your real biological age, not your birth year</span>
-          </div>
-        </div>
-        <div class="mens-metric fade-up d3">
-          <div class="mens-val">24/7</div>
-          <div>
-            <span class="mens-title">On-Call Provider Access</span>
-            <span class="mens-desc">A real clinician available to text, adjust, and guide — not a portal, not a wait list</span>
-          </div>
-        </div>
+      <div class="phil-card">
+        <p class="phil-card-label">Our Promise</p>
+        <h3>A Provider Who Actually Knows You.</h3>
+        <p>Your dedicated clinician manages your care, calls in prescriptions, and knows your full health picture at every stage — with direct access when you need them.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- MEMBERSHIP -->
-<section class="membership" id="membership">
-  <div class="w">
-    <div class="sec-tag fade-up"><span class="sec-num">04</span> Membership</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:72px;align-items:end;">
-      <div>
-        <h2 class="section-heading fade-up">Elite Access.<br>Concierge Care.</h2>
-        <p class="section-sub fade-up d1">Membership gives you a true healthcare partner — not a clinic you visit when something goes wrong.</p>
-      </div>
-    </div>
+<section class="i-section mem-bg" id="membership">
+  <div class="i-w">
+    <div class="sec-label-i">Membership</div>
+    <h2 class="section-heading-i">Elite Access.<br><em>Concierge Care.</em></h2>
+    <p class="section-sub-i">Membership gives you a true healthcare partner — not a clinic you visit when something goes wrong.</p>
     <div class="mem-grid">
-      <div class="mem-card mc-featured fade-up">
-        <div class="mem-tier">★ Flagship Tier</div>
-        <div class="mem-name">Elite Concierge</div>
-        <div class="mem-price"><sup>$</sup>199<sub>/mo</sub></div>
+      <div class="mem-card">
+        <span class="mem-badge">Entry</span>
+        <h3>Peptide Plus</h3>
+        <p class="tier-desc">For the self-optimizer who wants expert clinical hands on their peptide protocol — and nothing else.</p>
+        <p class="tier-consult">60-min intake with your dedicated clinician</p>
+        <div class="tier-divider"></div>
         <ul class="mem-feats">
-          <li>24/7 On-Call Provider Access</li>
-          <li>Acting Primary Care Provider (PCP)</li>
-          <li>Prescriptions Called In &amp; Managed</li>
-          <li>Unlimited Telehealth &amp; In-Person Visits</li>
-          <li>Comprehensive 100+ Biomarker Panel</li>
-          <li>Tailored Health Optimization Plan</li>
-          <li>Hormone Optimization (HRT / TRT)</li>
-          <li>Medical Weight Loss Support</li>
-          <li>20% Off All Peptides</li>
-          <li>15% Off All IV Services</li>
-          <li>Biological Age Analysis (PNOe)</li>
+          <li>Comprehensive peptide protocol design</li>
+          <li>Ongoing management &amp; monthly refills</li>
+          <li>Monthly follow-up check-in</li>
+          <li>Text-based provider access (business hours)</li>
+          <li>10% off all peptides</li>
         </ul>
-        <a href="https://www.innate-dfw.com/" class="mem-cta" target="_blank" rel="noopener">Get Started</a>
+        <a href="#book" class="mem-cta">Get Started</a>
       </div>
-      <div class="mem-card mc-standard fade-up d1">
-        <div class="mem-tier">Focused Tier</div>
-        <div class="mem-name">Peptide Plus</div>
-        <div class="mem-price" style="font-size:38px;color:rgba(106,138,112,0.55);">Custom<sub style="font-size:13px;"> pricing</sub></div>
+      <div class="mem-card">
+        <span class="mem-badge">Elite</span>
+        <h3>Innate Elite</h3>
+        <p class="tier-desc">The private provider relationship most people have never had. Full concierge PCP with optimization built in.</p>
+        <p class="tier-consult">60-min intake with your dedicated clinician</p>
+        <div class="tier-divider"></div>
+        <p class="tier-section-label">Clinical Care</p>
         <ul class="mem-feats">
-          <li>On-Call Provider for Peptide Services</li>
-          <li>Text-Based Refills</li>
-          <li>Monthly Peptide Follow-Ups</li>
-          <li>20% Off All Peptides</li>
-          <li>IV Services at Standard Cost</li>
-          <li>Focused Optimization — No PCP Services</li>
+          <li>Full concierge acting PCP</li>
+          <li>24/7 provider access — call or text, anytime</li>
+          <li>Unlimited telehealth &amp; in-person visits</li>
+          <li>Prescriptions called in &amp; managed</li>
         </ul>
-        <a href="https://www.innate-dfw.com/" class="mem-cta" target="_blank" rel="noopener">Learn More</a>
+        <p class="tier-section-label">Optimization</p>
+        <ul class="mem-feats">
+          <li>100+ marker comprehensive bio panel</li>
+          <li>Hormone optimization — TRT or BHRT</li>
+          <li>Peptide therapy management</li>
+          <li>Biological age &amp; metabolic analysis (PNOē)</li>
+          <li>Medical weight loss — muscle-preserving protocols</li>
+        </ul>
+        <p class="tier-section-label">Tailored by Innate</p>
+        <ul class="mem-feats">
+          <li>25% off IV services · 20% off all peptides</li>
+          <li>Spouse / partner add-on available</li>
+        </ul>
+        <a href="#book" class="mem-cta">Get Started</a>
       </div>
-      <div class="mem-card mc-light fade-up d2">
-        <div class="mem-tier">Team Tier</div>
-        <div class="mem-name">Corporate Wellness</div>
-        <div class="mem-price" style="font-size:38px;color:rgba(106,138,112,0.38);">Group<sub style="font-size:13px;"> rates</sub></div>
+      <div class="mem-card featured">
+        <span class="mem-badge">★ White Glove</span>
+        <h3>Innate Platinum</h3>
+        <p class="tier-desc">Everything in Elite — plus Tailored comes to you, quarterly, as part of membership. The pinnacle of concierge care.</p>
+        <p class="tier-consult">60-min intake with your dedicated clinician</p>
+        <div class="tier-divider"></div>
+        <p class="tier-section-label">Everything in Innate Elite, Plus</p>
         <ul class="mem-feats">
-          <li>Executive Team Health Assessments</li>
-          <li>In-Office IV Wellness Days</li>
-          <li>Corporate Biometric Screenings</li>
-          <li>Personalized Nutrition Plans</li>
-          <li>Stress &amp; Recovery Programs</li>
+          <li>One complimentary in-home IV drip per quarter</li>
+          <li>25% off all additional IV services</li>
+          <li>20% off all peptides</li>
+          <li>White-glove scheduling — dedicated contact</li>
+          <li>Priority access to new protocols &amp; services</li>
+          <li>Spouse / partner add-on available</li>
         </ul>
-        <a href="https://www.innate-dfw.com/" class="mem-cta" target="_blank" rel="noopener">Inquire</a>
+        <div class="tier-divider"></div>
+        <p class="tier-section-label">The Platinum Experience</p>
+        <ul class="mem-feats">
+          <li>Annual comprehensive performance review</li>
+          <li>VO2 max &amp; PNOē metabolic testing included</li>
+          <li>Tailored comes to your home — four times per year</li>
+          <li>First access to all new Innate services</li>
+        </ul>
+        <div class="tier-highlight">Tailored physically comes to the Platinum member's home four times per year as part of membership. No scheduling friction. No travel. Just care, delivered.</div>
+        <a href="#book" class="mem-cta">Get Started</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process">
-  <div class="w">
-    <div class="sec-tag fade-up" style="color:rgba(106,138,112,0.6);"><span class="sec-num">05</span> How It Works</div>
-    <h2 class="section-heading fade-up" style="max-width:560px;">From First Visit to Full Optimization.</h2>
-    <div class="process-steps">
-      <div class="process-step fade-up">
-        <div class="step-num">1</div>
-        <div class="step-title">Consult</div>
-        <div class="step-desc">A one-on-one discovery session to understand your goals, history, and biology</div>
-      </div>
-      <div class="process-step fade-up d1">
-        <div class="step-num">2</div>
-        <div class="step-title">Analyze</div>
-        <div class="step-desc">Comprehensive 100+ biomarker blood panel to establish your biological baseline</div>
-      </div>
-      <div class="process-step fade-up d2">
-        <div class="step-num">3</div>
-        <div class="step-title">Strategize</div>
-        <div class="step-desc">Your clinician builds a personalized optimization protocol around your results</div>
-      </div>
-      <div class="process-step fade-up d3">
-        <div class="step-num">4</div>
-        <div class="step-title">Optimize</div>
-        <div class="step-desc">Begin your protocol with direct clinician access every step of the way</div>
-      </div>
-      <div class="process-step fade-up d4">
-        <div class="step-num">5</div>
-        <div class="step-title">Evolve</div>
-        <div class="step-desc">Continuous monitoring, adjustment, and refinement — your biology is never static</div>
-      </div>
+<!-- HOW IT WORKS -->
+<section class="i-section how-bg" id="how-it-works">
+  <div class="i-w">
+    <div class="sec-label-i">Process</div>
+    <h2 class="section-heading-i">From First Visit to<br><em>Full Optimization.</em></h2>
+    <div class="how-steps">
+      <div class="how-step"><div class="step-num">1</div><h4 class="step-title">Consult</h4><p class="step-desc">A one-on-one discovery session to understand your goals, history, and biology</p></div>
+      <div class="how-step"><div class="step-num">2</div><h4 class="step-title">Analyze</h4><p class="step-desc">Comprehensive 100+ biomarker blood panel to establish your biological baseline</p></div>
+      <div class="how-step"><div class="step-num">3</div><h4 class="step-title">Strategize</h4><p class="step-desc">Your clinician builds a personalized optimization protocol around your results</p></div>
+      <div class="how-step"><div class="step-num">4</div><h4 class="step-title">Optimize</h4><p class="step-desc">Begin your protocol with direct clinician access every step of the way</p></div>
+      <div class="how-step"><div class="step-num">5</div><h4 class="step-title">Evolve</h4><p class="step-desc">Continuous monitoring, adjustment, and refinement — your biology is never static</p></div>
     </div>
-  </div>
-</section>
-
-<!-- TAILORED BY INNATE — IV THERAPY -->
-<section class="iv-therapy" id="iv-therapy">
-  <div class="w">
-    <div class="iv-section-tag fade-up"><span class="sec-num">06</span> Tailored by Innate</div>
-    <div class="iv-header">
+    <div class="vo2-callout">
+      <i class="ti ti-lungs"></i>
       <div>
-        <div class="iv-eyebrow fade-up">IV Infusion Menu</div>
-        <h2 class="iv-heading fade-up">Clinician-Crafted<br>Infusions.</h2>
-        <p class="iv-sub fade-up d1">Every drip is formulated by our clinicians and tailored to your biology — not an off-the-shelf protocol. From cellular energy to immune fortification, each infusion targets a specific physiological outcome.</p>
+        <h4>Exclusive · PNOē Precision Metabolic Testing</h4>
+        <p>One of the only DFW practices offering VO2 max and resting metabolic rate analysis — the gold standard for knowing your true biological age, metabolic efficiency, and performance ceiling.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILITARY -->
+<div class="military">
+  <div class="military-content">
+    <div class="sec-label-i">Military &amp; First Responders</div>
+    <h2>You Serve.<br>We Honor That.</h2>
+    <p>Special rates for active military, veterans, and first responders. Your body has given everything — let us help you recover, optimize, and continue performing at your highest level.</p>
+    <p class="military-story"><i class="ti ti-flame"></i>Before Innate Wellness, Chase served as a firefighter. He understands what service costs the body — personally. This one means something to us.</p>
+  </div>
+  <a href="#book" class="btn-i-primary" style="flex-shrink:0;">Contact Us</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO 2 — TAILORED BY INNATE
+═══════════════════════════════════════════ -->
+<div class="hero-tailored" id="tailored">
+  <div class="ht-eyebrow-bar">
+    <span>Tailored by Innate &nbsp;·&nbsp; Mobile IV Therapy &nbsp;·&nbsp; DFW</span>
+  </div>
+  <div class="hero-tailored-inner">
+    <div class="ht-left">
+      <p class="ht-pre">A brand of The Innate Family</p>
+      <h1 class="ht-headline">Elite wellness,</h1>
+      <h1 class="ht-headline-italic">delivered.</h1>
+      <p class="ht-sub">Clinician-designed IV infusions and mobile wellness services — brought directly to your home, office, or event. No membership required. No waiting rooms. Just care, on your terms.</p>
+      <div class="ht-ctas">
+        <a href="#book" class="btn-t-primary">Book a Drip</a>
+        <a href="#drips" class="btn-t-ghost">View the Menu →</a>
+      </div>
+      <div class="ht-pills">
+        <span>Mobile IV Therapy</span>
+        <span>Clinician-Designed Drips</span>
+        <span>No Membership Required</span>
+        <span>Events &amp; Groups</span>
+        <span>Throughout DFW</span>
+      </div>
+    </div>
+    <div class="ht-right">
+      <div class="ht-stat-card">
+        <p class="hsc-label">Licensed Clinicians</p>
+        <p class="hsc-val">RN</p>
+        <p class="hsc-note">Every session administered by a licensed RN — not a technician, not a certificate course.</p>
+      </div>
+      <div class="ht-stat-card">
+        <p class="hsc-label">Service Area</p>
+        <p class="hsc-val">DFW</p>
+        <p class="hsc-note">We come to you — your home, office, hotel suite, gym, or event venue. Anywhere in Dallas–Fort Worth.</p>
+      </div>
+      <div class="ht-stat-card">
+        <p class="hsc-label">Groups Welcome</p>
+        <p class="hsc-val">2+</p>
+        <p class="hsc-note">Intimate sessions to large-scale events — Bachelorette parties, marathons, corporate pop-ups, and more.</p>
+      </div>
+      <div class="ht-note-card">
+        <i class="ti ti-info-circle"></i>
+        <p>Tailored by Innate is open to everyone — no Innate Wellness membership required. Members receive exclusive pricing on all services.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAILORED TRUST BAR -->
+<div class="t-trust">
+  <div class="t-trust-item">
+    <span class="tti-label">Response Time</span>
+    <span class="tti-val">Fast</span>
+    <p class="tti-note">Same-day appointments often available — call or text anytime</p>
+  </div>
+  <div class="t-trust-item">
+    <span class="tti-label">Administered By</span>
+    <span class="tti-val">RN</span>
+    <p class="tti-note">Licensed registered nurses only — every single session</p>
+  </div>
+  <div class="t-trust-item">
+    <span class="tti-label">Clinician Oversight</span>
+    <span class="tti-val">MD/DO</span>
+    <p class="tti-note">All protocols designed and overseen by our medical director</p>
+  </div>
+  <div class="t-trust-item">
+    <span class="tti-label">Service Area</span>
+    <span class="tti-val">DFW</span>
+    <p class="tti-note">Wherever you are in Dallas–Fort Worth — we come to you</p>
+  </div>
+</div>
+
+<!-- TAILORED TICKER -->
+<div class="t-ticker" aria-hidden="true">
+  <div class="t-ticker-inner">
+    <span class="t-ticker-item">Myers' Blend</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">NAD+ Infusion</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Shield</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Beauty &amp; Glow</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Revival</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Metabolic Burn</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Methylene Blue</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Headache Drip</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Energy &amp; Performance</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Signature</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Myers' Blend</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">NAD+ Infusion</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Shield</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Beauty &amp; Glow</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Revival</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Metabolic Burn</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">Methylene Blue</span><span class="t-ticker-item">·</span>
+    <span class="t-ticker-item">The Signature</span><span class="t-ticker-item">·</span>
+  </div>
+</div>
+
+<!-- DRIP MENU -->
+<section class="t-section" id="drips">
+  <div class="i-w">
+    <div class="t-section-label">The IV Drip Menu</div>
+    <h2 class="t-section-h">Clinician-crafted infusions,<br><em>delivered to you.</em></h2>
+    <p class="t-section-sub">Every drip is clinician-designed and administered by a licensed RN at your location. No waiting rooms. No membership required. Just elite care, on your terms.</p>
+    <div class="drip-grid">
+
+      <div class="drip-card">
+        <span class="dc-tag">Our Best</span>
+        <h3 class="dc-title">The Signature</h3>
+        <p class="dc-ingredients">High-dose Vit C · Zinc · Glutathione · B-Complex · Magnesium · Biotin · Taurine · Amino Blend</p>
+        <p class="dc-copy">Our most comprehensive infusion — designed to elevate your health from the inside out. Supports energy, immunity, detox, recovery, and beauty all in one. Whether you're fighting fatigue, recovering from stress, or simply looking to feel your absolute best.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Most Requested</span>
+        <h3 class="dc-title">The Tailored Drip</h3>
+        <p class="dc-ingredients">Custom · Clinician-Designed · Personalized to You</p>
+        <p class="dc-copy">Not sure what you need? Tell us your goals, how you're feeling, and what your body is asking for. Your clinician builds a protocol around you specifically — because that's kind of our thing.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Classic</span>
+        <h3 class="dc-title">Myers' Blend</h3>
+        <p class="dc-ingredients">Magnesium · B-Complex · B12 · Vitamin C · Calcium</p>
+        <p class="dc-copy">The gold standard of IV therapy. A clinician-formulated blend of essential vitamins and minerals that supports overall wellness, immunity, energy, and recovery. The drip that started it all — and still one of the best.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Hangover Relief</span>
+        <h3 class="dc-title">The Revival</h3>
+        <p class="dc-ingredients">IV Fluids · B-Complex · Magnesium · Glutathione · Zofran · Pepcid · Toradol</p>
+        <p class="dc-copy">Fluids, anti-nausea support, and a full replenishing nutrient blend to get you back on your feet — fast. Whether it's the morning after or a tough week catching up with you, we handle it. No judgment, just results.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Immune Support</span>
+        <h3 class="dc-title">The Shield</h3>
+        <p class="dc-ingredients">High-dose Vitamin C · Zinc · Glutathione · B-Complex</p>
+        <p class="dc-copy">High-dose Vitamin C, zinc, and glutathione delivered directly to your bloodstream — faster and more effective than oral supplements. Whether you're fighting something off or trying to stay ahead of illness, The Shield has you covered.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Performance</span>
+        <h3 class="dc-title">Energy &amp; Performance</h3>
+        <p class="dc-ingredients">B12 · B-Complex · Taurine · Amino Acids · Magnesium</p>
+        <p class="dc-copy">B-vitamins, taurine, and performance nutrients to sharpen focus, boost energy, and support sustained output. Whether it's the gym, the boardroom, or both — without the crash that comes from stimulants.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Weight &amp; Metabolism</span>
+        <h3 class="dc-title">Metabolic Burn</h3>
+        <p class="dc-ingredients">L-Carnitine · MIC Complex · B12 · B-Complex · Vitamin C · Magnesium</p>
+        <p class="dc-copy">A targeted metabolic protocol supporting fat transport, cellular energy production, and liver function. L-Carnitine shuttles fatty acids into mitochondria while MIC complex enhances lipid metabolism. More than a B12 shot.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Beauty · Skin</span>
+        <h3 class="dc-title">Beauty &amp; Glow</h3>
+        <p class="dc-ingredients">Glutathione · Biotin · High-dose Vitamin C · B-Complex</p>
+        <p class="dc-copy">Glutathione, biotin, and skin-supporting antioxidants for radiance from the inside out. Skincare's best-kept secret isn't in a bottle — it's in a bag. Hydrate, brighten, and restore your natural glow at the cellular level.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Headache · Pain Relief</span>
+        <h3 class="dc-title">The Headache Drip</h3>
+        <p class="dc-ingredients">B-Complex · Magnesium · Vitamin C · Zofran · Toradol · Benadryl</p>
+        <p class="dc-copy">Fast-acting relief for headaches, migraines, and tension. A calm, soothing infusion targeting pain, nausea, and inflammation simultaneously — so you can get back to feeling like yourself without waiting for oral medications.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Longevity · Anti-Aging</span>
+        <h3 class="dc-title">NAD+ Infusion</h3>
+        <p class="dc-ingredients">NAD+ · IV Fluids · Dosing Personalized to Your Goals</p>
+        <p class="dc-copy">One of the most powerful cellular optimization tools available. NAD+ supports energy production, DNA repair, cognitive clarity, and healthy aging at the mitochondrial level. Delivered IV for maximum absorption.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Cognitive · Performance</span>
+        <h3 class="dc-title">Methylene Blue IV</h3>
+        <p class="dc-ingredients">Pharmaceutical-grade Methylene Blue · IV Fluids · Clinician-Dosed</p>
+        <p class="dc-copy">A cutting-edge mitochondrial support therapy shown to enhance cognitive function, mental clarity, and cellular energy. Delivered IV in a precise, clinician-supervised protocol — one of the most exciting tools in modern wellness optimization.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+      <div class="drip-card">
+        <span class="dc-tag">Hydration</span>
+        <h3 class="dc-title">Hydration &amp; Recovery</h3>
+        <p class="dc-ingredients">IV Fluids · Electrolytes · B-Complex · Anti-Nausea Support</p>
+        <p class="dc-copy">Rapid rehydration with electrolytes and essential nutrients. Ideal for post-workout recovery, illness, travel fatigue, or simply feeling run down. Sometimes the simplest solution is the most effective.</p>
+        <a href="#book" class="dc-book">Book This Drip →</a>
+      </div>
+
+    </div>
+    <div style="margin-top:40px;padding:22px 36px;border-top:1px solid var(--t-line);text-align:center;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--t-warm);line-height:1.9;">Specialty infusions and wellness shots also available — including high-dose Vitamin C, glutathione pushes, and custom add-on protocols. <a href="#book" style="color:var(--t-rose);text-decoration:none;font-style:normal;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.28em;text-transform:uppercase;border-bottom:1px solid rgba(184,148,144,.3);padding-bottom:1px;">Inquire for details →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<div class="t-addons">
+  <div class="i-w">
+    <h2 class="ao-title">IV Add-Ons</h2>
+    <p class="ao-sub">Enhance any drip with clinician-recommended add-ons. Ask your RN what pairs best with your protocol.</p>
+    <div class="ao-grid">
+      <div class="ao-item"><p class="ao-name">Glutathione Push</p><p class="ao-note">Oxidative stress reduction, liver support, skin brightening</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">B12 Boost</p><p class="ao-note">Energy, metabolism, mental clarity</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Vitamin C Push</p><p class="ao-note">Immune support, tissue repair, antioxidant</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Zofran</p><p class="ao-note">Anti-nausea, vomiting prevention</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Toradol</p><p class="ao-note">Pain relief, anti-inflammatory</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Benadryl</p><p class="ao-note">Allergy relief, calming, sleep support</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Pepcid</p><p class="ao-note">Stomach acid relief, digestion support</p><p class="ao-price">TBA</p></div>
+      <div class="ao-item"><p class="ao-name">Magnesium Push</p><p class="ao-note">Muscle relaxation, nerve function, mood</p><p class="ao-price">TBA</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<section class="t-events" id="events">
+  <div class="i-w">
+    <div class="t-section-label">Events &amp; Groups</div>
+    <h2 class="t-section-h">Every occasion,<br><em>elevated.</em></h2>
+    <p class="t-section-sub">From the morning-after to the finish line — Tailored brings licensed IV therapy to every kind of celebration, recovery, and milestone.</p>
+    <div class="event-cards">
+      <div class="ecard">
+        <div class="ec-num">01</div>
+        <div>
+          <span class="ec-tag">Most Requested</span>
+          <h3 class="ec-title">Weddings, Bachelorette &amp; Bachelor Parties</h3>
+          <p class="ec-copy">Your wedding weekend deserves more than just a great playlist. Whether it's the bride squad getting ready, the groom's group recovery, the morning-after, or a full bridal party hydration session — Tailored comes to your suite, villa, or venue with everything you need to look and feel your absolute best.</p>
+        </div>
+        <a href="#book" class="ec-link">Inquire for Your Event →</a>
+      </div>
+      <div class="ecard">
+        <div class="ec-num">02</div>
+        <div>
+          <span class="ec-tag">Celebrations</span>
+          <h3 class="ec-title">Girls' Night &amp; Birthdays</h3>
+          <p class="ec-copy">GNOs, milestone birthdays, holiday parties — make it an experience worth remembering. We bring the drips, you bring the occasion.</p>
+        </div>
+        <a href="#book" class="ec-link">Book a Group Session →</a>
+      </div>
+      <div class="ecard">
+        <div class="ec-num">03</div>
+        <div>
+          <span class="ec-tag">Fitness &amp; Performance</span>
+          <h3 class="ec-title">Marathons, Hyrox &amp; Race Events</h3>
+          <p class="ec-copy">Pre-race hydration, post-race recovery, training block support. Tailored is the secret weapon for serious athletes. We come to your gym, hotel, or finish line. BMW Dallas Marathon, Hyrox, run clubs, and more.</p>
+        </div>
+        <a href="#book" class="ec-link">Book Recovery →</a>
+      </div>
+      <div class="ecard">
+        <div class="ec-num">04</div>
+        <div>
+          <span class="ec-tag">Wellness Pop-Ups</span>
+          <h3 class="ec-title">Private Events &amp; Corporate Pop-Ups</h3>
+          <p class="ec-copy">Host a wellness experience at your next event. We set up on-site and take care of every guest — seamlessly and professionally. A branded wellness moment your attendees won't forget.</p>
+        </div>
+        <a href="#book" class="ec-link">Inquire About Pop-Ups →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FITNESS / ATHLETES -->
+<section class="t-fitness">
+  <div class="i-w">
+    <div class="t-fitness-inner">
       <div>
-        <a href="https://www.innate-dfw.com/" class="btn-ghost fade-up" target="_blank" rel="noopener" style="color:rgba(22,33,24,0.45);">Book a Drip <span>→</span></a>
+        <p class="t-section-label" style="margin-bottom:28px;">For Athletes &amp; Competitors</p>
+        <h2 class="fit-h">Cross the finish line.<br><em>We'll handle the rest.</em></h2>
+        <p class="fit-copy">Pre-race hydration, post-race recovery, and performance support for athletes at every level. We come to your gym, your hotel, or your finish line. No clinic visit, no hassle.</p>
+        <ul class="fit-list">
+          <li>BMW Dallas Marathon — Pre &amp; post-race recovery</li>
+          <li>Hyrox Competitions — Full recovery protocol</li>
+          <li>Run Clubs &amp; Studios — Group sessions</li>
+          <li>Triathlon &amp; Obstacle Races — Performance support</li>
+          <li>Team &amp; League Sports — Pre &amp; post-game</li>
+        </ul>
       </div>
-    </div>
-    <div class="iv-grid">
-
-      <div class="iv-card fade-up">
-        <div class="iv-card-icon">⚗️</div>
-        <div class="iv-card-name">Myers' Cocktail</div>
-        <div class="iv-card-tagline">The gold-standard foundational drip</div>
-        <div class="iv-card-ingredients">Mg · Ca · B-Complex · B12 · Vit C</div>
-        <div class="iv-card-desc">The benchmark IV infusion. Restores micronutrient deficiencies, combats chronic fatigue, eases migraines, and primes your immune system for sustained performance.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
+      <div class="fit-stats">
+        <div class="fit-stat"><p class="fs-big">45</p><p class="fs-note">Minutes · Average session</p></div>
+        <div class="fit-stat"><p class="fs-big">100%</p><p class="fs-note">Mobile · We come to you</p></div>
+        <div class="fit-stat"><p class="fs-big">RN</p><p class="fs-note">Administered · Every session</p></div>
       </div>
-
-      <div class="iv-card fade-up d1">
-        <div class="iv-card-icon">⚡</div>
-        <div class="iv-card-name">NAD+</div>
-        <div class="iv-card-tagline">Cellular energy & anti-aging</div>
-        <div class="iv-card-ingredients">Nicotinamide Adenine Dinucleotide</div>
-        <div class="iv-card-desc">Replenishes your mitochondrial fuel at the cellular level. Enhances cognitive clarity, accelerates metabolism, supports addiction recovery, and slows biological aging.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d2">
-        <div class="iv-card-icon">🛡️</div>
-        <div class="iv-card-name">High-Dose Vitamin C</div>
-        <div class="iv-card-tagline">Immune armor & antioxidant protection</div>
-        <div class="iv-card-ingredients">Ascorbic Acid 15–50g</div>
-        <div class="iv-card-desc">Mega-dose ascorbic acid delivered directly to the bloodstream — bypassing GI absorption limits. Fortifies immunity, neutralizes free radicals, and drives collagen synthesis.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d3">
-        <div class="iv-card-icon">✦</div>
-        <div class="iv-card-name">Glutathione</div>
-        <div class="iv-card-tagline">The master antioxidant</div>
-        <div class="iv-card-ingredients">Reduced Glutathione</div>
-        <div class="iv-card-desc">Your body's most powerful detoxifier. Clears oxidative stress, supports liver function, enhances skin luminosity, and provides deep cellular protection against inflammation.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up">
-        <div class="iv-card-icon">🏃</div>
-        <div class="iv-card-name">Athletic Recovery</div>
-        <div class="iv-card-tagline">Performance restoration</div>
-        <div class="iv-card-ingredients">Amino Acids · Mg · B-Complex · Electrolytes</div>
-        <div class="iv-card-desc">Engineered for serious athletes. Accelerates muscle fiber repair, reduces DOMS, replenishes electrolyte reserves, and restores peak neuromuscular function post-training.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d1">
-        <div class="iv-card-icon">🧠</div>
-        <div class="iv-card-name">Brain + Focus</div>
-        <div class="iv-card-tagline">Cognitive elevation</div>
-        <div class="iv-card-ingredients">Alpha-Lipoic Acid · B12 · Mg · Taurine</div>
-        <div class="iv-card-desc">Fuel your prefrontal cortex. Sharpens mental clarity, improves working memory, combats brain fog, and protects neural tissue against oxidative degradation.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d2">
-        <div class="iv-card-icon">◈</div>
-        <div class="iv-card-name">Immune Shield</div>
-        <div class="iv-card-tagline">Rapid-response defense</div>
-        <div class="iv-card-ingredients">Zinc · Vit C · B-Complex · Selenium</div>
-        <div class="iv-card-desc">A concentrated immune activation protocol. Deployed at the first sign of illness or before high-exposure periods to mount a fast, coordinated immune response.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d3">
-        <div class="iv-card-icon">◎</div>
-        <div class="iv-card-name">Luminosity</div>
-        <div class="iv-card-tagline">Beauty from within</div>
-        <div class="iv-card-ingredients">Biotin · Glutathione · Vit C · Zinc</div>
-        <div class="iv-card-desc">A beauty-focused infusion targeting radiant skin, stronger hair and nails, and a visible glow — driven by collagen production and intracellular brightening from the inside out.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up">
-        <div class="iv-card-icon">▣</div>
-        <div class="iv-card-name">Metabolic Burn</div>
-        <div class="iv-card-tagline">Weight & metabolism support</div>
-        <div class="iv-card-ingredients">L-Carnitine · B-Complex · MIC Complex</div>
-        <div class="iv-card-desc">Activates fat transport pathways at the cellular level. L-Carnitine shuttles fatty acids into mitochondria; MIC complex enhances liver function and lipid metabolism.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-      <div class="iv-card fade-up d1">
-        <div class="iv-card-icon">💧</div>
-        <div class="iv-card-name">Hydration + Relief</div>
-        <div class="iv-card-tagline">Rapid rehydration & recovery</div>
-        <div class="iv-card-ingredients">Normal Saline · Electrolytes · B-Vitamins</div>
-        <div class="iv-card-desc">Instant rehydration delivered at clinical speed. Ideal for hangover recovery, jet lag, dehydration, or as a baseline reset before any other therapeutic protocol.</div>
-        <a href="https://www.innate-dfw.com/" class="iv-card-cta" target="_blank" rel="noopener">Reserve <span>→</span></a>
-      </div>
-
-    </div>
-
-    <div class="iv-banner fade-up">
-      <div class="iv-banner-text">
-        Every infusion is <em>clinician-supervised</em> and can be customized with add-on boosters — including Magnesium, Biotin, Zofran, Toradol, and specialty amino acids.
-      </div>
-      <a href="https://www.innate-dfw.com/" class="btn-iv" target="_blank" rel="noopener">Schedule Your Infusion</a>
     </div>
   </div>
 </section>
 
-<!-- MILITARY / SPECIAL RATES -->
-<section class="special">
-  <div class="special-inner">
-    <div class="special-icon">🎖️</div>
-    <div class="special-content">
-      <span class="special-tag fade-up">Military &amp; First Responders</span>
-      <h3 class="special-h fade-up">You Serve. We Honor That.</h3>
-      <p class="special-b fade-up">Special rates for active military, veterans, and first responders. Your body has given everything — let us help you recover, optimize, and continue performing at your highest level.</p>
+<!-- BOOKING -->
+<section class="t-booking" id="book">
+  <div class="i-w">
+    <div class="book-grid">
+      <div>
+        <p class="t-section-label" style="margin-bottom:24px;">Ready?</p>
+        <h2 class="book-h">Book your <em>drip.</em></h2>
+        <p class="book-copy">Tell us what you need and we'll handle the rest. Same-day appointments often available — call or text <a href="tel:9036179061" style="color:var(--t-rose);text-decoration:none;">(903) 617-9061</a>.</p>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div class="book-step">
+            <span class="bs-num">1</span>
+            <div><p class="bs-title">Choose Your Drip</p><p class="bs-copy">Pick from the menu above or tell us your goals and we'll recommend the right protocol.</p></div>
+          </div>
+          <div class="book-step">
+            <span class="bs-num">2</span>
+            <div><p class="bs-title">Pick a Time &amp; Location</p><p class="bs-copy">We come to you — your home, office, hotel, gym, or event venue throughout DFW.</p></div>
+          </div>
+          <div class="book-step">
+            <span class="bs-num">3</span>
+            <div><p class="bs-title">We Handle Everything</p><p class="bs-copy">Your licensed RN arrives, sets up, and administers your infusion. You sit back and recover.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="book-form">
+        <p class="fl" style="font-size:10px;letter-spacing:.36em;margin-bottom:4px;">Request a Booking</p>
+        <div class="form-row">
+          <input type="text" class="fi-l" placeholder="First Name">
+          <input type="text" class="fi-l" placeholder="Last Name">
+        </div>
+        <input type="tel" class="fi-l" placeholder="Phone Number">
+        <input type="email" class="fi-l" placeholder="Email Address">
+        <select class="fs-l">
+          <option value="" disabled selected>Select a Drip</option>
+          <option>The Signature</option>
+          <option>The Tailored Drip (Custom)</option>
+          <option>Myers' Blend</option>
+          <option>The Revival (Hangover)</option>
+          <option>The Shield (Immune)</option>
+          <option>Energy &amp; Performance</option>
+          <option>Metabolic Burn</option>
+          <option>Beauty &amp; Glow</option>
+          <option>The Headache Drip</option>
+          <option>NAD+ Infusion</option>
+          <option>Methylene Blue IV</option>
+          <option>Hydration &amp; Recovery</option>
+          <option>Event / Group Booking</option>
+        </select>
+        <input type="text" class="fi-l" placeholder="Preferred Date &amp; Time">
+        <input type="text" class="fi-l" placeholder="Your Location (address or area)">
+        <textarea class="ft-l" placeholder="Anything else we should know? (symptoms, goals, group size...)"></textarea>
+        <button type="submit" class="fsub-l">Submit Booking Request</button>
+        <p class="form-note-l">We typically respond within 1–2 hours. For urgent requests, call or text (903) 617-9061.</p>
+      </div>
     </div>
-    <a href="https://www.innate-dfw.com/" class="btn-primary fade-up" target="_blank" rel="noopener" style="flex-shrink:0;">Get Discounted Access</a>
   </div>
 </section>
 
-<!-- CTA BANNER -->
-<section class="cta-banner" id="contact">
-  <p class="cta-eyebrow fade-up">Innate Wellness · DFW, Texas</p>
-  <h2 class="cta-heading fade-up">Ready to <em>own</em><br>your health?</h2>
-  <p class="cta-sub fade-up">Functional Medicine · Hormone Optimization · Peptide Therapy<br>Medical Weight Loss · Longevity · Biohacking · IV Therapy</p>
-  <div class="cta-actions fade-up">
-    <a href="https://www.innate-dfw.com/" class="btn-primary" target="_blank" rel="noopener">Book Your Consultation</a>
-    <a href="#services" class="btn-ghost">View Services <span>→</span></a>
+<!-- INNATE LINK BAND -->
+<div class="innate-link-band">
+  <div>
+    <p class="ilb-eye">Part of The Innate Family</p>
+    <h3 class="ilb-h">Want the full clinical experience?</h3>
+    <p class="ilb-copy">Innate Wellness members receive 25% off all Tailored IV services — plus concierge medicine, hormone optimization, peptide therapy, longevity protocols, and more.</p>
   </div>
-</section>
+  <a href="#membership" class="btn-t-outline">View Membership →</a>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div>
-      <img src="brand_assests/Image.webp" alt="Innate Wellness" class="footer-logo">
-      <p class="footer-tagline">Engineering vitality from the inside out — DFW's premier functional medicine &amp; optimization practice.</p>
-    </div>
-    <div>
-      <span class="footer-col-title">Services</span>
-      <div class="footer-links">
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Health Optimization</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Peptide Therapy</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">HRT &amp; TRT</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Longevity</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">IV Therapy</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Weight Loss</a>
+  <div class="i-w">
+    <div class="ft-grid">
+      <div>
+        <div class="fb-logos">
+          <div class="fb-logo-innate"><img src="brand_assests/Image.webp" alt="Innate Wellness"></div>
+          <div class="fb-logo-tailored">Tailored by Innate</div>
+        </div>
+        <p class="fb-copy">Where elite care meets your front door — DFW's premier concierge functional medicine, optimization, and mobile wellness practice.</p>
+        <div class="fb-contact">
+          <a href="tel:9036179061">(903) 617-9061</a><br>
+          <a href="tel:9453845342">(945) 384-5342</a><br>
+          Dallas–Fort Worth, TX
+        </div>
+      </div>
+      <div>
+        <p class="fc-head">Innate Services</p>
+        <ul class="fc-links">
+          <li><a href="#services">Concierge Medicine</a></li>
+          <li><a href="#services">Hormone Optimization</a></li>
+          <li><a href="#services">Peptide Therapy</a></li>
+          <li><a href="#services">Longevity &amp; Metabolic Testing</a></li>
+          <li><a href="#services">Medical Weight Loss</a></li>
+          <li><a href="#services">Corporate Wellness</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="fc-head">Tailored IV Menu</p>
+        <ul class="fc-links">
+          <li><a href="#drips">The Signature</a></li>
+          <li><a href="#drips">Myers' Blend</a></li>
+          <li><a href="#drips">The Revival</a></li>
+          <li><a href="#drips">NAD+ Infusion</a></li>
+          <li><a href="#drips">Beauty &amp; Glow</a></li>
+          <li><a href="#events">Events &amp; Groups</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="fc-head">Connect</p>
+        <ul class="fc-links">
+          <li><a href="#book">Book a Drip</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#innate">Innate Wellness</a></li>
+          <li><a href="https://www.innate-dfw.com/" target="_blank" rel="noopener">innate-dfw.com</a></li>
+          <li><a href="tel:9036179061">(903) 617-9061</a></li>
+          <li><a href="#book">Dallas–Fort Worth, TX</a></li>
+        </ul>
       </div>
     </div>
-    <div>
-      <span class="footer-col-title">Practice</span>
-      <div class="footer-links">
-        <a href="#about" class="footer-link">About</a>
-        <a href="#membership" class="footer-link">Membership</a>
-        <a href="#" class="footer-link">Men's Health</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Corporate Wellness</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Biohacking</a>
-      </div>
+    <div class="ft-bottom">
+      <span class="ft-copy-sm">© 2026 The Innate Family. All rights reserved.</span>
+      <span class="ft-copy-sm">Innate Wellness · Tailored by Innate · DFW</span>
     </div>
-    <div>
-      <span class="footer-col-title">Connect</span>
-      <div class="footer-links">
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">Book Appointment</a>
-        <a href="https://www.innate-dfw.com/" class="footer-link" target="_blank" rel="noopener">innate-dfw.com</a>
-        <span class="footer-link" style="cursor:default;">Dallas–Fort Worth, TX</span>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Innate Wellness. All rights reserved.</span>
-    <span class="footer-copy" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:rgba(245,245,243,0.1);">Optimization · Performance · Longevity</span>
   </div>
 </footer>
 
 <script>
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-// Activate scroll animations only after JS loads (prevents flash of hidden content)
-document.documentElement.classList.add('js-ready');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('in');
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
-}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-// ── HERO SHAPES ──
-// Port of ElegantShape / HeroGeometric. Each shape is a frosted-glass pill
-// that enters from above (Web Animations API) then floats forever (CSS keyframe).
-// Colors adapted from original indigo/rose palette to Innate Wellness sage-green tokens.
-(function () {
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  var wrap = document.createElement('div');
-  wrap.setAttribute('aria-hidden', 'true');
-  wrap.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden;';
-  hero.insertBefore(wrap, hero.firstChild);
-
-  var shapes = [
-    { left:  '-5%',  top:    '20%', w: 600, h: 140, rot:  12, grad: 'rgba(106,138,112,0.20)', delay: 0.3 },
-    { right:  '0%',  top:    '75%', w: 500, h: 120, rot: -15, grad: 'rgba(58,80,64,0.24)',    delay: 0.5 },
-    { left:  '10%',  bottom: '10%', w: 300, h:  80, rot:  -8, grad: 'rgba(22,33,24,0.32)',    delay: 0.4 },
-    { right: '20%',  top:    '15%', w: 200, h:  60, rot:  20, grad: 'rgba(138,170,144,0.16)', delay: 0.6 },
-    { left:  '25%',  top:    '10%', w: 150, h:  40, rot: -25, grad: 'rgba(106,138,112,0.10)', delay: 0.7 },
-  ];
-
-  shapes.forEach(function (s) {
-    var outer = document.createElement('div');
-    outer.style.cssText = 'position:absolute;' +
-      (s.left   ? 'left:'   + s.left   + ';' : '') +
-      (s.right  ? 'right:'  + s.right  + ';' : '') +
-      (s.top    ? 'top:'    + s.top    + ';' : '') +
-      (s.bottom ? 'bottom:' + s.bottom + ';' : '');
-
-    // Entrance: opacity 0→1, slide from -150px, rotate (rot-15)→rot
-    outer.animate(
-      [
-        { opacity: 0, transform: 'rotate(' + (s.rot - 15) + 'deg) translateY(-150px)' },
-        { opacity: 1, transform: 'rotate(' +  s.rot       + 'deg) translateY(0px)' }
-      ],
-      { duration: 2400, delay: s.delay * 1000, easing: 'cubic-bezier(0.23,0.86,0.39,0.96)', fill: 'both' }
-    );
-
-    // Inner: infinite float, starts after entry finishes
-    var inner = document.createElement('div');
-    inner.style.cssText =
-      'width:' + s.w + 'px;height:' + s.h + 'px;position:relative;' +
-      'animation:hsFloat 12s ' + (s.delay + 2.4).toFixed(1) + 's ease-in-out infinite;';
-
-    var pill = document.createElement('div');
-    pill.className = 'hs-pill';
-    pill.style.background = 'linear-gradient(to right,' + s.grad + ',transparent)';
-
-    inner.appendChild(pill);
-    outer.appendChild(inner);
-    wrap.appendChild(outer);
-  });
-}());
-
+});
 </script>
 </body>
 </html>
